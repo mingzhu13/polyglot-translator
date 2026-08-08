@@ -223,7 +223,7 @@
         }
 
         .table-wrapper {
-            max-height: 600px;
+            max-height: 550px;
             overflow-y: auto;
             border-radius: 1.5rem;
             background: rgba(255, 255, 255, 0.5);
@@ -338,6 +338,50 @@
             font-size: 0.95rem;
         }
 
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 0 0.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            background: #e3edf4;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #1f4b5e;
+            cursor: pointer;
+            transition: 0.15s;
+            min-width: 40px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: #c8dae7;
+            transform: scale(0.95);
+        }
+
+        .pagination button:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .pagination button.active {
+            background: #1b4b5e;
+            color: white;
+        }
+
+        .pagination .page-info {
+            color: #4a6f82;
+            font-size: 0.85rem;
+            padding: 0 0.5rem;
+        }
+
         .footer-note {
             margin-top: 2.2rem;
             font-size: 0.85rem;
@@ -408,12 +452,18 @@
             }
 
             #historyTable {
-                font-size: 0.8rem;
+                font-size: 0.75rem;
             }
 
             #historyTable th,
             #historyTable td {
-                padding: 0.5rem 0.6rem;
+                padding: 0.4rem 0.5rem;
+            }
+
+            .pagination button {
+                padding: 0.3rem 0.7rem;
+                font-size: 0.7rem;
+                min-width: 32px;
             }
         }
 
@@ -498,6 +548,13 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination">
+                    <button id="prevPage" disabled>◀ Prev</button>
+                    <span class="page-info" id="pageInfo">Page 1 of 1</span>
+                    <button id="nextPage" disabled>Next ▶</button>
                 </div>
             </div>
 
@@ -657,6 +714,13 @@
 
             const historyBody = document.getElementById('historyBody');
             const historyCount = document.getElementById('historyCount');
+            const prevPageBtn = document.getElementById('prevPage');
+            const nextPageBtn = document.getElementById('nextPage');
+            const pageInfo = document.getElementById('pageInfo');
+
+            // ----- Pagination State -----
+            let currentPage = 1;
+            const ENTRIES_PER_PAGE = 10;
 
             // ----- History Store -----
             let history = [];
@@ -672,6 +736,7 @@
                 } catch (e) {
                     history = [];
                 }
+                currentPage = 1;
                 renderHistory();
             }
 
@@ -686,6 +751,13 @@
                 if (index < 0 || index >= history.length) return;
                 history.splice(index, 1);
                 saveHistory();
+                // If current page has no entries, go to previous page
+                const totalPages = Math.ceil(history.length / ENTRIES_PER_PAGE);
+                if (currentPage > totalPages && totalPages > 0) {
+                    currentPage = totalPages;
+                } else if (totalPages === 0) {
+                    currentPage = 1;
+                }
                 renderHistory();
                 statusMsg.textContent = '🗑️ Entry deleted.';
             }
@@ -746,10 +818,35 @@
                     history = history.slice(0, MAX_HISTORY);
                 }
 
+                // Reset to first page after adding new entry
+                currentPage = 1;
                 saveHistory();
             }
 
+            function getPaginatedData() {
+                const startIndex = (currentPage - 1) * ENTRIES_PER_PAGE;
+                const endIndex = startIndex + ENTRIES_PER_PAGE;
+                return history.slice(startIndex, endIndex);
+            }
+
+            function getTotalPages() {
+                return Math.ceil(history.length / ENTRIES_PER_PAGE) || 1;
+            }
+
             function renderHistory() {
+                const totalPages = getTotalPages();
+                
+                // Ensure current page is valid
+                if (currentPage > totalPages) {
+                    currentPage = totalPages;
+                }
+                if (currentPage < 1) {
+                    currentPage = 1;
+                }
+
+                const paginatedData = getPaginatedData();
+                const startIndex = (currentPage - 1) * ENTRIES_PER_PAGE;
+
                 if (history.length === 0) {
                     historyBody.innerHTML = `
                         <tr>
@@ -757,13 +854,17 @@
                         </tr>
                     `;
                     historyCount.textContent = '(0 entries)';
+                    prevPageBtn.disabled = true;
+                    nextPageBtn.disabled = true;
+                    pageInfo.textContent = 'Page 1 of 1';
                     return;
                 }
 
                 historyCount.textContent = `(${history.length} entries)`;
 
                 let html = '';
-                history.forEach((entry, index) => {
+                paginatedData.forEach((entry, index) => {
+                    const globalIndex = startIndex + index;
                     const isDuplicate = entry.count > 1;
                     const rowClass = isDuplicate ? 'duplicate' : '';
                     
@@ -779,7 +880,7 @@
                     
                     html += `
                         <tr class="${rowClass}">
-                            <td>${index + 1}</td>
+                            <td>${globalIndex + 1}</td>
                             <td class="word-cell">
                                 ${displayWord}
                                 ${isDuplicate ? `<span class="duplicate-badge">⚠️ repeated</span>` : ''}
@@ -792,19 +893,25 @@
                                 ${isDuplicate ? `<span class="count-badge">${entry.count}</span>` : '1'}
                             </td>
                             <td style="text-align:center;">
-                                <button class="delete-btn" data-index="${index}" title="Delete this entry">✕</button>
+                                <button class="delete-btn" data-index="${globalIndex}" title="Delete this entry">✕</button>
                             </td>
                         </tr>
                     `;
                 });
 
                 historyBody.innerHTML = html;
+
+                // Update pagination controls
+                prevPageBtn.disabled = currentPage <= 1;
+                nextPageBtn.disabled = currentPage >= totalPages;
+                pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
             }
 
             function clearHistory() {
                 if (history.length === 0) return;
                 if (confirm('Delete all search history?')) {
                     history = [];
+                    currentPage = 1;
                     saveHistory();
                     renderHistory();
                     statusMsg.textContent = '🗑️ All entries deleted.';
@@ -948,6 +1055,29 @@
                 }
             }
 
+            // ----- Pagination Controls -----
+            function goToPage(page) {
+                const totalPages = getTotalPages();
+                if (page < 1 || page > totalPages) return;
+                currentPage = page;
+                renderHistory();
+                // Scroll to top of table
+                document.querySelector('.table-wrapper').scrollTop = 0;
+            }
+
+            function nextPage() {
+                const totalPages = getTotalPages();
+                if (currentPage < totalPages) {
+                    goToPage(currentPage + 1);
+                }
+            }
+
+            function prevPage() {
+                if (currentPage > 1) {
+                    goToPage(currentPage - 1);
+                }
+            }
+
             // ----- Event listeners using EVENT DELEGATION -----
             translateBtn.addEventListener('click', handleTranslate);
 
@@ -958,17 +1088,12 @@
                 }
             });
 
-            document.getElementById('clearHistoryBtn').addEventListener('click', function() {
-                if (history.length === 0) return;
-                if (confirm('Delete all search history?')) {
-                    history = [];
-                    saveHistory();
-                    renderHistory();
-                    statusMsg.textContent = '🗑️ All entries deleted.';
-                }
-            });
-            
+            document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
             document.getElementById('exportHistoryBtn').addEventListener('click', exportHistory);
+
+            // Pagination buttons
+            prevPageBtn.addEventListener('click', prevPage);
+            nextPageBtn.addEventListener('click', nextPage);
 
             // ----- EVENT DELEGATION for delete buttons (NO CONFIRMATION) -----
             historyBody.addEventListener('click', function(e) {
@@ -976,9 +1101,21 @@
                 if (target) {
                     const index = parseInt(target.getAttribute('data-index'));
                     if (!isNaN(index)) {
-                        // Delete immediately - no confirmation
                         deleteEntry(index);
                     }
+                }
+            });
+
+            // ----- Keyboard shortcuts for pagination -----
+            document.addEventListener('keydown', function(e) {
+                // Left arrow = previous page, Right arrow = next page
+                if (e.target.tagName === 'INPUT') return;
+                if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevPage();
+                } else if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    nextPage();
                 }
             });
 
@@ -988,8 +1125,9 @@
             loadHistory();
 
             console.log('🤖 AI Polyglot ready! Translates ANY word with German/French articles');
-            console.log('📜 History tracks searches - "die Wurzel" and "Wurzel" are considered the same');
+            console.log('📜 History shows 10 entries per page');
             console.log('🗑️ Click the ✕ button to delete individual entries (no confirmation)');
+            console.log('⌨️ Use ← and → arrow keys to navigate pages');
         })();
     </script>
 </body>
