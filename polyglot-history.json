@@ -1,5 +1,18 @@
 [
   {
+    "word": "Lauchsuppe",
+    "normalized": "lauchsuppe",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Leek soup",
+      "de": "Lauchsuppe",
+      "fr": "Soupe aux poireaux",
+      "zh": "韭菜汤"
+    },
+    "count": 1,
+    "timestamp": 1786283869768
+  },
+  {
     "word": "Sauerbraten",
     "normalized": "sauerbraten",
     "detectedLang": "en",
