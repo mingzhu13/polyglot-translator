@@ -205,7 +205,6 @@
             flex-wrap: wrap;
         }
 
-        /* History Table Styles */
         .history-header {
             display: flex;
             justify-content: space-between;
@@ -561,7 +560,6 @@
                 </div>
             </div>
 
-            <!-- History Table -->
             <div class="history-section">
                 <div class="history-header">
                     <h2>
@@ -597,7 +595,6 @@
                     </table>
                 </div>
 
-                <!-- Pagination -->
                 <div class="pagination" id="pagination">
                     <button id="prevPage" disabled>◀ Prev</button>
                     <span class="page-info" id="pageInfo">Page 1 of 1</span>
@@ -616,8 +613,6 @@
         (function() {
             // ============================================================
             //  🔐 CLOUD SYNC CONFIGURATION - JSONBin.io
-            //  Your Bin ID: 6a7847d4da38895dfec9134
-            //  Your Master Key: $2a$10$I438gI5VsEM13WEQ2kzoOennxj5x/TbRZY5E5gjpY2QCtSSEXYVru
             // ============================================================
             const JSONBIN_BIN_ID = '6a7847d4da38895dfec9134';
             const JSONBIN_API_KEY = '$2a$10$I438gI5VsEM13WEQ2kzoOennxj5x/TbRZY5E5gjpY2QCtSSEXYVru';
@@ -716,9 +711,6 @@
             const GERMAN_ARTICLES = ['der', 'die', 'das', 'den', 'dem', 'des'];
             const FRENCH_ARTICLES = ['le', 'la', 'les', 'l\'', 'un', 'une', 'des'];
 
-            // ============================================================
-            //  Helper Functions
-            // ============================================================
             function stripArticle(word, language) {
                 if (!word) return word;
                 let lower = word.toLowerCase().trim();
@@ -797,7 +789,7 @@
             const MAX_HISTORY = 200;
 
             // ============================================================
-            //  Cloud Sync Functions
+            //  Cloud Sync Functions (with CORS proxy)
             // ============================================================
             async function syncToCloud(data) {
                 if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
@@ -809,7 +801,11 @@
                     syncStatus.textContent = '☁️ Syncing...';
                     syncStatus.className = 'sync-status syncing';
                     
-                    const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+                    // Use CORS proxy
+                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                    const targetUrl = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+                    
+                    const response = await fetch(proxyUrl + encodeURIComponent(targetUrl), {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',
@@ -819,16 +815,17 @@
                     });
                     
                     if (!response.ok) {
-                        const errorData = await response.json();
-                        throw new Error(errorData.message || 'Sync failed');
+                        throw new Error('Sync failed');
                     }
                     
                     syncStatus.textContent = '☁️ Synced ✓';
                     syncStatus.className = 'sync-status synced';
+                    return true;
                 } catch (error) {
                     console.error('Sync error:', error);
                     syncStatus.textContent = '☁️ Offline';
                     syncStatus.className = 'sync-status error';
+                    return false;
                 }
             }
 
@@ -842,7 +839,11 @@
                     syncStatus.textContent = '☁️ Loading...';
                     syncStatus.className = 'sync-status syncing';
                     
-                    const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+                    // Use CORS proxy
+                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+                    const targetUrl = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+                    
+                    const response = await fetch(proxyUrl + encodeURIComponent(targetUrl), {
                         headers: {
                             'X-Master-Key': JSONBIN_API_KEY
                         }
@@ -1246,23 +1247,27 @@
                 }
                 
                 statusMsg.textContent = '☁️ Syncing...';
-                await syncToCloud(history);
+                const synced = await syncToCloud(history);
                 
-                const cloudData = await syncFromCloud();
-                if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
-                    if (cloudData.length > history.length) {
-                        history = cloudData;
-                        saveHistory();
-                        renderHistory();
-                        statusMsg.textContent = '☁️ Synced from cloud (newer data)';
-                    } else if (history.length > cloudData.length) {
-                        await syncToCloud(history);
-                        statusMsg.textContent = '☁️ Synced to cloud (local has more)';
+                if (synced) {
+                    const cloudData = await syncFromCloud();
+                    if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
+                        if (cloudData.length > history.length) {
+                            history = cloudData;
+                            saveHistory();
+                            renderHistory();
+                            statusMsg.textContent = '☁️ Synced from cloud (newer data)';
+                        } else if (history.length > cloudData.length) {
+                            await syncToCloud(history);
+                            statusMsg.textContent = '☁️ Synced to cloud (local has more)';
+                        } else {
+                            statusMsg.textContent = '☁️ Already in sync ✓';
+                        }
                     } else {
-                        statusMsg.textContent = '☁️ Already in sync ✓';
+                        statusMsg.textContent = '☁️ Synced to cloud';
                     }
                 } else {
-                    statusMsg.textContent = '☁️ Synced to cloud';
+                    statusMsg.textContent = '❌ Sync failed. Check console for errors.';
                 }
             }
 
@@ -1285,7 +1290,6 @@
             prevPageBtn.addEventListener('click', prevPage);
             nextPageBtn.addEventListener('click', nextPage);
 
-            // Event delegation for delete buttons
             historyBody.addEventListener('click', function(e) {
                 const target = e.target.closest('.delete-btn');
                 if (target) {
@@ -1296,7 +1300,6 @@
                 }
             });
 
-            // Keyboard shortcuts
             document.addEventListener('keydown', function(e) {
                 if (e.target.tagName === 'INPUT') return;
                 if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
@@ -1311,10 +1314,8 @@
             loadHistory();
 
             console.log('🤖 AI Polyglot ready with cloud sync!');
+            console.log('📡 Using CORS proxy for JSONBin.io');
             console.log('📡 Bin ID: 6a7847d4da38895dfec9134');
-            console.log('📜 History shows 10 entries per page');
-            console.log('🗑️ Click ✕ to delete entries (no confirmation)');
-            console.log('⌨️ Use ← and → arrow keys to navigate pages');
         })();
     </script>
 </body>
