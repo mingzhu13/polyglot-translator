@@ -1,5 +1,18 @@
 [
   {
+    "word": "anscheinend",
+    "normalized": "anscheinend",
+    "detectedLang": "en",
+    "translations": {
+      "en": "apparently",
+      "de": "anscheinend",
+      "fr": "apparemment",
+      "zh": "显然"
+    },
+    "count": 1,
+    "timestamp": 1786282943537
+  },
+  {
     "word": "Beckmesserei",
     "normalized": "beckmesserei",
     "detectedLang": "en",
