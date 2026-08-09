@@ -1,5 +1,18 @@
 [
   {
+    "word": "Rostbratwurst",
+    "normalized": "rostbratwurst",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Rostbratwurst",
+      "de": "Rostbratwurst",
+      "fr": "Saucisse Rostbrat",
+      "zh": "腊肠"
+    },
+    "count": 1,
+    "timestamp": 1786283699274
+  },
+  {
     "word": "Aufbruch",
     "normalized": "aufbruch",
     "detectedLang": "en",
