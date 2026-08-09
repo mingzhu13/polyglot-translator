@@ -1,5 +1,18 @@
 [
   {
+    "word": "Aufbruch",
+    "normalized": "aufbruch",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Departure",
+      "de": "Aufbruch",
+      "fr": "Départ",
+      "zh": "离开"
+    },
+    "count": 1,
+    "timestamp": 1786283457566
+  },
+  {
     "word": "verweigern",
     "normalized": "verweigern",
     "detectedLang": "en",
