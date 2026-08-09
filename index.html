@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Polyglot · Cloud Sync</title>
+    <title>AI Polyglot · GitHub Sync</title>
     <style>
         * {
             box-sizing: border-box;
@@ -445,6 +445,57 @@
             font-weight: 400;
         }
 
+        .github-setup-hint {
+            background: #eef4f8;
+            border: 1px solid #c8dae7;
+            border-radius: 1rem;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #1a3a48;
+        }
+
+        .github-setup-hint code {
+            background: #fdebd0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #a04000;
+        }
+
+        .github-setup-hint a {
+            color: #1b4b5e;
+        }
+
+        .token-input-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+            align-items: center;
+        }
+
+        .token-input-group input {
+            flex: 1;
+            padding: 0.3rem 0.8rem;
+            border-radius: 40px;
+            border: 1px solid #c8dae7;
+            font-size: 0.8rem;
+            min-width: 150px;
+            background: white;
+            outline: none;
+        }
+
+        .token-input-group input:focus {
+            border-color: #1b4b5e;
+        }
+
+        .token-input-group .small-btn {
+            padding: 0.3rem 1rem;
+            font-size: 0.7rem;
+            white-space: nowrap;
+        }
+
         @media (max-width: 640px) {
             .card {
                 padding: 1.8rem 1.2rem;
@@ -534,6 +585,12 @@
             .card {
                 padding: 1.5rem 1rem;
             }
+            .token-input-group {
+                flex-direction: column;
+            }
+            .token-input-group input {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -546,6 +603,19 @@
                 <span class="globe">4</span>
             </h1>
             <div class="subtitle">Translate any word between English · German (with articles) · French (with articles) · Chinese</div>
+
+            <!-- GitHub Setup Hint -->
+            <div class="github-setup-hint" id="githubHint">
+                <strong>📦 GitHub Sync Setup</strong><br>
+                1. Create a <a href="https://github.com/settings/tokens" target="_blank">GitHub Personal Access Token</a> (classic) with <code>repo</code> scope<br>
+                2. Enter your token below (stored only in your browser)<br>
+                3. Click <strong>"Save Token"</strong> and then <strong>"Sync Now"</strong>
+                <div class="token-input-group">
+                    <input type="password" id="githubToken" placeholder="Enter your GitHub token...">
+                    <button class="history-btn primary small-btn" id="saveTokenBtn">💾 Save Token</button>
+                    <button class="history-btn small-btn" id="clearTokenBtn">🗑️ Clear</button>
+                </div>
+            </div>
 
             <div class="input-group">
                 <input type="text" id="wordInput" placeholder="Type any word… (e.g. happiness, 幸福, Glück, bonheur)" autofocus>
@@ -612,11 +682,19 @@
     <script>
         (function() {
             // ============================================================
-            //  🔐 CLOUD SYNC CONFIGURATION - JSONBin.io
+            //  GITHUB SYNC CONFIGURATION
+            //  Your token will be stored in localStorage
+            //  File path: polyglot-history.json in your repository
             // ============================================================
-            const JSONBIN_BIN_ID = '6a7847d4da38895dfec9134';
-            const JSONBIN_API_KEY = '$2a$10$I438gI5VsEM13WEQ2kzoOennxj5x/TbRZY5E5gjpY2QCtSSEXYVru';
-            const USE_CLOUD = true;
+            
+            // --- CONFIGURATION ---
+            // REPLACE these with your GitHub info:
+            const GITHUB_USERNAME = 'YOUR_GITHUB_USERNAME';
+            const GITHUB_REPO = 'YOUR_REPO_NAME';
+            const FILE_PATH = 'polyglot-history.json';
+            
+            // Token will be loaded from localStorage
+            let GITHUB_TOKEN = localStorage.getItem('github_token') || '';
 
             // ============================================================
             //  API Configuration
@@ -775,6 +853,7 @@
             const nextPageBtn = document.getElementById('nextPage');
             const pageInfo = document.getElementById('pageInfo');
             const syncStatus = document.getElementById('syncStatus');
+            const tokenInput = document.getElementById('githubToken');
 
             // ============================================================
             //  Pagination State
@@ -789,35 +868,76 @@
             const MAX_HISTORY = 200;
 
             // ============================================================
-            //  Cloud Sync Functions (with CORS proxy)
+            //  GitHub Sync Functions
             // ============================================================
-            async function syncToCloud(data) {
-                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
-                    syncStatus.textContent = '💾 Local';
-                    syncStatus.className = 'sync-status';
-                    return;
+            function getGitHubUrl() {
+                return `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${FILE_PATH}`;
+            }
+
+            async function getFileSha() {
+                try {
+                    const response = await fetch(getGitHubUrl(), {
+                        headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
+                    });
+                    
+                    if (response.status === 404) {
+                        return null; // File doesn't exist yet
+                    }
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    return data.sha;
+                } catch (error) {
+                    console.error('Error getting file SHA:', error);
+                    return null;
                 }
+            }
+
+            async function syncToGitHub(data) {
+                if (!GITHUB_TOKEN || GITHUB_USERNAME === 'YOUR_GITHUB_USERNAME') {
+                    syncStatus.textContent = '⚠️ No token';
+                    syncStatus.className = 'sync-status error';
+                    return false;
+                }
+
                 try {
                     syncStatus.textContent = '☁️ Syncing...';
                     syncStatus.className = 'sync-status syncing';
+
+                    const sha = await getFileSha();
+                    const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
                     
-                    // Use CORS proxy
-                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                    const targetUrl = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+                    const body = {
+                        message: `Update history - ${new Date().toLocaleString()}`,
+                        content: content,
+                        branch: 'main'
+                    };
                     
-                    const response = await fetch(proxyUrl + encodeURIComponent(targetUrl), {
+                    if (sha) {
+                        body.sha = sha;
+                    }
+
+                    const response = await fetch(getGitHubUrl(), {
                         method: 'PUT',
                         headers: {
+                            'Authorization': `token ${GITHUB_TOKEN}`,
                             'Content-Type': 'application/json',
-                            'X-Master-Key': JSONBIN_API_KEY
+                            'Accept': 'application/vnd.github.v3+json'
                         },
-                        body: JSON.stringify({ content: data })
+                        body: JSON.stringify(body)
                     });
-                    
+
                     if (!response.ok) {
-                        throw new Error('Sync failed');
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || 'Sync failed');
                     }
-                    
+
                     syncStatus.textContent = '☁️ Synced ✓';
                     syncStatus.className = 'sync-status synced';
                     return true;
@@ -829,39 +949,75 @@
                 }
             }
 
-            async function syncFromCloud() {
-                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
-                    syncStatus.textContent = '💾 Local';
-                    syncStatus.className = 'sync-status';
+            async function syncFromGitHub() {
+                if (!GITHUB_TOKEN || GITHUB_USERNAME === 'YOUR_GITHUB_USERNAME') {
+                    syncStatus.textContent = '⚠️ No token';
+                    syncStatus.className = 'sync-status error';
                     return null;
                 }
+
                 try {
                     syncStatus.textContent = '☁️ Loading...';
                     syncStatus.className = 'sync-status syncing';
-                    
-                    // Use CORS proxy
-                    const proxyUrl = 'https://api.allorigins.win/raw?url=';
-                    const targetUrl = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
-                    
-                    const response = await fetch(proxyUrl + encodeURIComponent(targetUrl), {
+
+                    const response = await fetch(getGitHubUrl(), {
                         headers: {
-                            'X-Master-Key': JSONBIN_API_KEY
+                            'Authorization': `token ${GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
                         }
                     });
-                    
-                    if (!response.ok) {
-                        throw new Error('Load failed');
+
+                    if (response.status === 404) {
+                        syncStatus.textContent = '☁️ No file';
+                        syncStatus.className = 'sync-status';
+                        return null;
                     }
-                    
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+
                     const data = await response.json();
+                    const content = JSON.parse(decodeURIComponent(escape(atob(data.content))));
+                    
                     syncStatus.textContent = '☁️ Synced ✓';
                     syncStatus.className = 'sync-status synced';
-                    return data.record;
+                    return content;
                 } catch (error) {
                     console.error('Load error:', error);
                     syncStatus.textContent = '☁️ Offline';
                     syncStatus.className = 'sync-status error';
                     return null;
+                }
+            }
+
+            // ============================================================
+            //  Token Management
+            // ============================================================
+            function saveToken() {
+                const token = tokenInput.value.trim();
+                if (!token) {
+                    alert('Please enter a GitHub token.');
+                    return;
+                }
+                GITHUB_TOKEN = token;
+                localStorage.setItem('github_token', token);
+                tokenInput.value = '';
+                statusMsg.textContent = '✅ Token saved!';
+                syncStatus.textContent = '💾 Ready';
+                syncStatus.className = 'sync-status';
+                
+                // Try to sync immediately
+                setTimeout(() => syncNow(), 500);
+            }
+
+            function clearToken() {
+                if (confirm('Clear your GitHub token?')) {
+                    GITHUB_TOKEN = '';
+                    localStorage.removeItem('github_token');
+                    statusMsg.textContent = '🗑️ Token cleared.';
+                    syncStatus.textContent = '💾 Local';
+                    syncStatus.className = 'sync-status';
                 }
             }
 
@@ -879,26 +1035,27 @@
                     history = [];
                 }
                 
-                // Try to load from cloud
-                if (USE_CLOUD && JSONBIN_BIN_ID !== 'YOUR_BIN_ID') {
-                    syncFromCloud().then(cloudData => {
+                // Try to load from GitHub
+                if (GITHUB_TOKEN && GITHUB_USERNAME !== 'YOUR_GITHUB_USERNAME') {
+                    syncFromGitHub().then(cloudData => {
                         if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
                             if (cloudData.length > history.length) {
                                 history = cloudData;
                                 saveHistory();
                                 renderHistory();
-                                statusMsg.textContent = '☁️ Loaded from cloud';
+                                statusMsg.textContent = '☁️ Loaded from GitHub';
                             } else if (history.length > cloudData.length) {
-                                syncToCloud(history);
+                                syncToGitHub(history);
                             }
                         } else if (history.length > 0) {
-                            syncToCloud(history);
+                            syncToGitHub(history);
                         }
                     });
                 }
                 
                 currentPage = 1;
                 renderHistory();
+                updateSyncStatus();
             }
 
             function saveHistory() {
@@ -906,12 +1063,19 @@
                     localStorage.setItem('polyglot_history_articles', JSON.stringify(history));
                 } catch (e) {}
                 
-                // Sync to cloud
-                if (USE_CLOUD && JSONBIN_BIN_ID !== 'YOUR_BIN_ID') {
-                    syncToCloud(history);
-                }
-                
                 renderHistory();
+                updateSyncStatus();
+            }
+
+            function updateSyncStatus() {
+                const count = history.length;
+                if (GITHUB_TOKEN && GITHUB_USERNAME !== 'YOUR_GITHUB_USERNAME') {
+                    syncStatus.textContent = `💾 ${count} entries`;
+                    syncStatus.className = 'sync-status';
+                } else {
+                    syncStatus.textContent = `💾 ${count} entries`;
+                    syncStatus.className = 'sync-status';
+                }
             }
 
             function deleteEntry(index) {
@@ -986,6 +1150,11 @@
 
                 currentPage = 1;
                 saveHistory();
+                
+                // Auto-sync to GitHub
+                if (GITHUB_TOKEN && GITHUB_USERNAME !== 'YOUR_GITHUB_USERNAME') {
+                    syncToGitHub(history);
+                }
             }
 
             function getPaginatedData() {
@@ -1203,6 +1372,11 @@
                     saveHistory();
                     renderHistory();
                     statusMsg.textContent = '🗑️ All entries deleted.';
+                    
+                    // Sync empty array to GitHub
+                    if (GITHUB_TOKEN && GITHUB_USERNAME !== 'YOUR_GITHUB_USERNAME') {
+                        syncToGitHub(history);
+                    }
                 }
             }
 
@@ -1241,30 +1415,36 @@
             }
 
             async function syncNow() {
-                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
-                    statusMsg.textContent = '⚠️ Cloud sync is not configured.';
+                if (!GITHUB_TOKEN) {
+                    statusMsg.textContent = '⚠️ Please enter your GitHub token first.';
+                    document.getElementById('githubToken').focus();
+                    return;
+                }
+                
+                if (GITHUB_USERNAME === 'YOUR_GITHUB_USERNAME' || GITHUB_REPO === 'YOUR_REPO_NAME') {
+                    statusMsg.textContent = '⚠️ Please update GITHUB_USERNAME and GITHUB_REPO in the code.';
                     return;
                 }
                 
                 statusMsg.textContent = '☁️ Syncing...';
-                const synced = await syncToCloud(history);
+                const synced = await syncToGitHub(history);
                 
                 if (synced) {
-                    const cloudData = await syncFromCloud();
+                    const cloudData = await syncFromGitHub();
                     if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
                         if (cloudData.length > history.length) {
                             history = cloudData;
                             saveHistory();
                             renderHistory();
-                            statusMsg.textContent = '☁️ Synced from cloud (newer data)';
+                            statusMsg.textContent = '☁️ Synced from GitHub (newer data)';
                         } else if (history.length > cloudData.length) {
-                            await syncToCloud(history);
-                            statusMsg.textContent = '☁️ Synced to cloud (local has more)';
+                            await syncToGitHub(history);
+                            statusMsg.textContent = '☁️ Synced to GitHub (local has more)';
                         } else {
                             statusMsg.textContent = '☁️ Already in sync ✓';
                         }
                     } else {
-                        statusMsg.textContent = '☁️ Synced to cloud';
+                        statusMsg.textContent = '☁️ Synced to GitHub';
                     }
                 } else {
                     statusMsg.textContent = '❌ Sync failed. Check console for errors.';
@@ -1286,6 +1466,16 @@
             document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
             document.getElementById('exportHistoryBtn').addEventListener('click', exportCSV);
             document.getElementById('syncNowBtn').addEventListener('click', syncNow);
+            document.getElementById('saveTokenBtn').addEventListener('click', saveToken);
+            document.getElementById('clearTokenBtn').addEventListener('click', clearToken);
+
+            // Enter key on token input
+            tokenInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    saveToken();
+                }
+            });
 
             prevPageBtn.addEventListener('click', prevPage);
             nextPageBtn.addEventListener('click', nextPage);
@@ -1311,11 +1501,20 @@
             // ============================================================
             detectedLang.textContent = '🔍 Source: auto-detect';
             statusMsg.textContent = 'Type any word and press Translate ✨';
+            
+            // Load token from localStorage
+            if (GITHUB_TOKEN) {
+                syncStatus.textContent = '🔑 Token loaded';
+                syncStatus.className = 'sync-status';
+            }
+            
             loadHistory();
 
-            console.log('🤖 AI Polyglot ready with cloud sync!');
-            console.log('📡 Using CORS proxy for JSONBin.io');
-            console.log('📡 Bin ID: 6a7847d4da38895dfec9134');
+            console.log('🤖 AI Polyglot ready with GitHub sync!');
+            console.log('📡 Configure your GitHub token to sync across devices');
+            console.log('📜 History shows 10 entries per page');
+            console.log('🗑️ Click ✕ to delete entries (no confirmation)');
+            console.log('⌨️ Use ← and → arrow keys to navigate pages');
         })();
     </script>
 </body>
