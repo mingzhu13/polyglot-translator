@@ -1,5 +1,18 @@
 [
   {
+    "word": "Sauerbraten",
+    "normalized": "sauerbraten",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Sauerbraten",
+      "de": "Sauerbraten",
+      "fr": "Sauerbraten",
+      "zh": "酸牛肉"
+    },
+    "count": 1,
+    "timestamp": 1786283843864
+  },
+  {
     "word": "Rostbratwurst",
     "normalized": "rostbratwurst",
     "detectedLang": "en",
