@@ -905,11 +905,12 @@
                     syncStatus.className = 'sync-status error';
                     return false;
                 }
-
+            
                 try {
                     syncStatus.textContent = '☁️ Syncing...';
                     syncStatus.className = 'sync-status syncing';
-
+            
+                    // Always get the latest SHA first
                     const sha = await getFileSha();
                     const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
                     
@@ -919,10 +920,11 @@
                         branch: 'main'
                     };
                     
+                    // Only add SHA if the file exists
                     if (sha) {
                         body.sha = sha;
                     }
-
+            
                     const response = await fetch(getGitHubUrl(), {
                         method: 'PUT',
                         headers: {
@@ -932,12 +934,39 @@
                         },
                         body: JSON.stringify(body)
                     });
-
+            
+                    // If we get a 409 (conflict), try one more time with fresh SHA
+                    if (response.status === 409) {
+                        console.log('Conflict detected, retrying with fresh SHA...');
+                        const freshSha = await getFileSha();
+                        if (freshSha) {
+                            body.sha = freshSha;
+                            const retryResponse = await fetch(getGitHubUrl(), {
+                                method: 'PUT',
+                                headers: {
+                                    'Authorization': `token ${GITHUB_TOKEN}`,
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/vnd.github.v3+json'
+                                },
+                                body: JSON.stringify(body)
+                            });
+                            
+                            if (!retryResponse.ok) {
+                                const errorData = await retryResponse.json();
+                                throw new Error(errorData.message || 'Sync failed on retry');
+                            }
+                            
+                            syncStatus.textContent = '☁️ Synced ✓';
+                            syncStatus.className = 'sync-status synced';
+                            return true;
+                        }
+                    }
+            
                     if (!response.ok) {
                         const errorData = await response.json();
                         throw new Error(errorData.message || 'Sync failed');
                     }
-
+            
                     syncStatus.textContent = '☁️ Synced ✓';
                     syncStatus.className = 'sync-status synced';
                     return true;
