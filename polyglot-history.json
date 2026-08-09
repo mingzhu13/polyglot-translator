@@ -1,5 +1,18 @@
 [
   {
+    "word": "verweigern",
+    "normalized": "verweigern",
+    "detectedLang": "en",
+    "translations": {
+      "en": "refuse",
+      "de": "verweigern",
+      "fr": "refuser",
+      "zh": "拒绝"
+    },
+    "count": 2,
+    "timestamp": 1786282967021
+  },
+  {
     "word": "anscheinend",
     "normalized": "anscheinend",
     "detectedLang": "en",
@@ -89,19 +102,6 @@
     },
     "count": 1,
     "timestamp": 1786200658625
-  },
-  {
-    "word": "verweigern",
-    "normalized": "verweigern",
-    "detectedLang": "en",
-    "translations": {
-      "en": "refuse",
-      "de": "verweigern",
-      "fr": "refuser",
-      "zh": "拒绝"
-    },
-    "count": 1,
-    "timestamp": 1786200650205
   },
   {
     "word": "Kühltruhe",
