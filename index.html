@@ -684,14 +684,14 @@
             // ============================================================
             //  GITHUB SYNC CONFIGURATION
             //  Your token will be stored in localStorage
-            //  File path: polyglot-history.json in your repository
+            //  File path: polyglot-history.json in the root of your repository
             // ============================================================
             
             // --- CONFIGURATION ---
             // REPLACE these with your GitHub info:
             const GITHUB_USERNAME = 'mingzhu13';
             const GITHUB_REPO = 'polyglot-translator';
-            const FILE_PATH = 'polyglot-history.json';
+            const FILE_PATH = 'polyglot-history.json';  // Root path
             
             // Token will be loaded from localStorage
             let GITHUB_TOKEN = localStorage.getItem('github_token') || '';
