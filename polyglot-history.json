@@ -1,5 +1,18 @@
 [
   {
+    "word": "Berechnen",
+    "normalized": "berechnen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Calculate",
+      "de": "Berechnen",
+      "fr": "Calculer",
+      "zh": "计算"
+    },
+    "count": 1,
+    "timestamp": 1786283890310
+  },
+  {
     "word": "Lauchsuppe",
     "normalized": "lauchsuppe",
     "detectedLang": "en",
