@@ -1,5 +1,18 @@
 [
   {
+    "word": "éclipser",
+    "normalized": "éclipser",
+    "detectedLang": "en",
+    "translations": {
+      "en": "eclipse",
+      "de": "Finsternis",
+      "fr": "éclipser",
+      "zh": "蚀"
+    },
+    "count": 1,
+    "timestamp": 1786283975737
+  },
+  {
     "word": "Berechnen",
     "normalized": "berechnen",
     "detectedLang": "en",
