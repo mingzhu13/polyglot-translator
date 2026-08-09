@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Polyglot · Translation History</title>
+    <title>AI Polyglot · Cloud Sync</title>
     <style>
         * {
             box-sizing: border-box;
@@ -172,6 +172,39 @@
             font-weight: 400;
         }
 
+        .sync-status {
+            font-size: 0.75rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: #e3edf4;
+            color: #4a6f82;
+        }
+
+        .sync-status.synced {
+            color: #2d7d46;
+            background: #e6f4ea;
+        }
+
+        .sync-status.syncing {
+            color: #f39c12;
+            background: #fef9e7;
+        }
+
+        .sync-status.error {
+            color: #e74c3c;
+            background: #fde8e8;
+        }
+
+        .status-right {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
         /* History Table Styles */
         .history-header {
             display: flex;
@@ -222,8 +255,17 @@
             background: #f5d6d3;
         }
 
+        .history-btn.primary {
+            background: #1c5a72;
+            color: white;
+        }
+
+        .history-btn.primary:hover {
+            background: #0f445a;
+        }
+
         .table-wrapper {
-            max-height: 550px;
+            max-height: 500px;
             overflow-y: auto;
             border-radius: 1.5rem;
             background: rgba(255, 255, 255, 0.5);
@@ -338,7 +380,6 @@
             font-size: 0.95rem;
         }
 
-        /* Pagination Styles */
         .pagination {
             display: flex;
             justify-content: center;
@@ -369,11 +410,6 @@
         .pagination button:disabled {
             opacity: 0.4;
             cursor: not-allowed;
-        }
-
-        .pagination button.active {
-            background: #1b4b5e;
-            color: white;
         }
 
         .pagination .page-info {
@@ -449,6 +485,8 @@
             .history-btn {
                 flex: 1;
                 text-align: center;
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
             }
 
             #historyTable {
@@ -464,6 +502,11 @@
                 padding: 0.3rem 0.7rem;
                 font-size: 0.7rem;
                 min-width: 32px;
+            }
+
+            .status-right {
+                width: 100%;
+                justify-content: flex-end;
             }
         }
 
@@ -512,7 +555,10 @@
 
             <div class="status-bar">
                 <span id="detectedLang">🔍 Source: auto-detect</span>
-                <span id="statusMessage">Ready</span>
+                <div class="status-right">
+                    <span class="sync-status" id="syncStatus">💾 Local</span>
+                    <span id="statusMessage">Ready</span>
+                </div>
             </div>
 
             <!-- History Table -->
@@ -523,8 +569,9 @@
                         <span style="font-size:0.8rem;font-weight:400;color:#4a6f82;" id="historyCount">(0 entries)</span>
                     </h2>
                     <div class="history-controls">
+                        <button class="history-btn primary" id="syncNowBtn">🔄 Sync Now</button>
                         <button class="history-btn" id="clearHistoryBtn">🗑️ Clear All</button>
-                        <button class="history-btn" id="exportHistoryBtn">📤 Export CSV</button>
+                        <button class="history-btn" id="exportHistoryBtn">📤 CSV</button>
                     </div>
                 </div>
 
@@ -567,7 +614,18 @@
 
     <script>
         (function() {
-            // ----- API Configuration -----
+            // ============================================================
+            //  🔐 CLOUD SYNC CONFIGURATION - JSONBin.io
+            //  Your Bin ID: 6a7847d4da38895dfec9134
+            //  Your Master Key: $2a$10$I438gI5VsEM13WEQ2kzoOennxj5x/TbRZY5E5gjpY2QCtSSEXYVru
+            // ============================================================
+            const JSONBIN_BIN_ID = '6a7847d4da38895dfec9134';
+            const JSONBIN_API_KEY = '$2a$10$I438gI5VsEM13WEQ2kzoOennxj5x/TbRZY5E5gjpY2QCtSSEXYVru';
+            const USE_CLOUD = true;
+
+            // ============================================================
+            //  API Configuration
+            // ============================================================
             const TRANSLATE_API = 'https://translate.googleapis.com/translate_a/single';
             
             const LANG_CODES = {
@@ -584,7 +642,9 @@
                 'zh': { name: 'Chinese', flag: '🇨🇳' }
             };
 
-            // ----- ARTICLE DATABASE for German and French -----
+            // ============================================================
+            //  ARTICLE DATABASE
+            // ============================================================
             const ARTICLE_DB = {
                 'german': {
                     'mann': 'der', 'vater': 'der', 'bruder': 'der', 'sohn': 'der',
@@ -656,6 +716,9 @@
             const GERMAN_ARTICLES = ['der', 'die', 'das', 'den', 'dem', 'des'];
             const FRENCH_ARTICLES = ['le', 'la', 'les', 'l\'', 'un', 'une', 'des'];
 
+            // ============================================================
+            //  Helper Functions
+            // ============================================================
             function stripArticle(word, language) {
                 if (!word) return word;
                 let lower = word.toLowerCase().trim();
@@ -706,7 +769,9 @@
                 return null;
             }
 
-            // ----- DOM refs -----
+            // ============================================================
+            //  DOM Refs
+            // ============================================================
             const inputEl = document.getElementById('wordInput');
             const translateBtn = document.getElementById('detectBtn');
             const statusMsg = document.getElementById('statusMessage');
@@ -717,15 +782,91 @@
             const prevPageBtn = document.getElementById('prevPage');
             const nextPageBtn = document.getElementById('nextPage');
             const pageInfo = document.getElementById('pageInfo');
+            const syncStatus = document.getElementById('syncStatus');
 
-            // ----- Pagination State -----
+            // ============================================================
+            //  Pagination State
+            // ============================================================
             let currentPage = 1;
             const ENTRIES_PER_PAGE = 10;
 
-            // ----- History Store -----
+            // ============================================================
+            //  History Store
+            // ============================================================
             let history = [];
             const MAX_HISTORY = 200;
 
+            // ============================================================
+            //  Cloud Sync Functions
+            // ============================================================
+            async function syncToCloud(data) {
+                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
+                    syncStatus.textContent = '💾 Local';
+                    syncStatus.className = 'sync-status';
+                    return;
+                }
+                try {
+                    syncStatus.textContent = '☁️ Syncing...';
+                    syncStatus.className = 'sync-status syncing';
+                    
+                    const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Master-Key': JSONBIN_API_KEY
+                        },
+                        body: JSON.stringify({ content: data })
+                    });
+                    
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(errorData.message || 'Sync failed');
+                    }
+                    
+                    syncStatus.textContent = '☁️ Synced ✓';
+                    syncStatus.className = 'sync-status synced';
+                } catch (error) {
+                    console.error('Sync error:', error);
+                    syncStatus.textContent = '☁️ Offline';
+                    syncStatus.className = 'sync-status error';
+                }
+            }
+
+            async function syncFromCloud() {
+                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
+                    syncStatus.textContent = '💾 Local';
+                    syncStatus.className = 'sync-status';
+                    return null;
+                }
+                try {
+                    syncStatus.textContent = '☁️ Loading...';
+                    syncStatus.className = 'sync-status syncing';
+                    
+                    const response = await fetch(`https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`, {
+                        headers: {
+                            'X-Master-Key': JSONBIN_API_KEY
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error('Load failed');
+                    }
+                    
+                    const data = await response.json();
+                    syncStatus.textContent = '☁️ Synced ✓';
+                    syncStatus.className = 'sync-status synced';
+                    return data.record;
+                } catch (error) {
+                    console.error('Load error:', error);
+                    syncStatus.textContent = '☁️ Offline';
+                    syncStatus.className = 'sync-status error';
+                    return null;
+                }
+            }
+
+            // ============================================================
+            //  History CRUD
+            // ============================================================
             function loadHistory() {
                 try {
                     const saved = localStorage.getItem('polyglot_history_articles');
@@ -736,6 +877,25 @@
                 } catch (e) {
                     history = [];
                 }
+                
+                // Try to load from cloud
+                if (USE_CLOUD && JSONBIN_BIN_ID !== 'YOUR_BIN_ID') {
+                    syncFromCloud().then(cloudData => {
+                        if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
+                            if (cloudData.length > history.length) {
+                                history = cloudData;
+                                saveHistory();
+                                renderHistory();
+                                statusMsg.textContent = '☁️ Loaded from cloud';
+                            } else if (history.length > cloudData.length) {
+                                syncToCloud(history);
+                            }
+                        } else if (history.length > 0) {
+                            syncToCloud(history);
+                        }
+                    });
+                }
+                
                 currentPage = 1;
                 renderHistory();
             }
@@ -744,6 +904,12 @@
                 try {
                     localStorage.setItem('polyglot_history_articles', JSON.stringify(history));
                 } catch (e) {}
+                
+                // Sync to cloud
+                if (USE_CLOUD && JSONBIN_BIN_ID !== 'YOUR_BIN_ID') {
+                    syncToCloud(history);
+                }
+                
                 renderHistory();
             }
 
@@ -751,7 +917,6 @@
                 if (index < 0 || index >= history.length) return;
                 history.splice(index, 1);
                 saveHistory();
-                // If current page has no entries, go to previous page
                 const totalPages = Math.ceil(history.length / ENTRIES_PER_PAGE);
                 if (currentPage > totalPages && totalPages > 0) {
                     currentPage = totalPages;
@@ -818,7 +983,6 @@
                     history = history.slice(0, MAX_HISTORY);
                 }
 
-                // Reset to first page after adding new entry
                 currentPage = 1;
                 saveHistory();
             }
@@ -833,16 +997,14 @@
                 return Math.ceil(history.length / ENTRIES_PER_PAGE) || 1;
             }
 
+            // ============================================================
+            //  Render Functions
+            // ============================================================
             function renderHistory() {
                 const totalPages = getTotalPages();
                 
-                // Ensure current page is valid
-                if (currentPage > totalPages) {
-                    currentPage = totalPages;
-                }
-                if (currentPage < 1) {
-                    currentPage = 1;
-                }
+                if (currentPage > totalPages) currentPage = totalPages;
+                if (currentPage < 1) currentPage = 1;
 
                 const paginatedData = getPaginatedData();
                 const startIndex = (currentPage - 1) * ENTRIES_PER_PAGE;
@@ -901,57 +1063,14 @@
 
                 historyBody.innerHTML = html;
 
-                // Update pagination controls
                 prevPageBtn.disabled = currentPage <= 1;
                 nextPageBtn.disabled = currentPage >= totalPages;
                 pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
             }
 
-            function clearHistory() {
-                if (history.length === 0) return;
-                if (confirm('Delete all search history?')) {
-                    history = [];
-                    currentPage = 1;
-                    saveHistory();
-                    renderHistory();
-                    statusMsg.textContent = '🗑️ All entries deleted.';
-                }
-            }
-
-            function exportHistory() {
-                if (history.length === 0) {
-                    alert('No history to export.');
-                    return;
-                }
-
-                let csv = 'Word,Normalized,English,German (with article),French (with article),Chinese,Count\n';
-                history.forEach(entry => {
-                    const deWithArticle = entry.translations.de ? 
-                        `${getArticle('de', entry.translations.de) || ''} ${entry.translations.de}`.trim() : '';
-                    const frWithArticle = entry.translations.fr ? 
-                        `${getArticle('fr', entry.translations.fr) || ''} ${entry.translations.fr}`.trim() : '';
-                    
-                    const row = [
-                        `"${entry.word}"`,
-                        `"${entry.normalized || ''}"`,
-                        `"${entry.translations.en || ''}"`,
-                        `"${deWithArticle}"`,
-                        `"${frWithArticle}"`,
-                        `"${entry.translations.zh || ''}"`,
-                        entry.count || 1
-                    ];
-                    csv += row.join(',') + '\n';
-                });
-
-                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-                const link = document.createElement('a');
-                link.href = URL.createObjectURL(blob);
-                link.download = `polyglot_history_${new Date().toISOString().slice(0,10)}.csv`;
-                link.click();
-                URL.revokeObjectURL(link.href);
-            }
-
-            // ----- Translation Functions -----
+            // ============================================================
+            //  Translation Functions
+            // ============================================================
             function setLoading(isLoading) {
                 translateBtn.disabled = isLoading;
                 if (isLoading) {
@@ -961,7 +1080,6 @@
                 }
             }
 
-            // ----- Detect language -----
             async function detectLanguage(text) {
                 try {
                     const url = `${TRANSLATE_API}?client=gtx&sl=auto&tl=en&dt=t&q=${encodeURIComponent(text)}`;
@@ -980,7 +1098,6 @@
                 }
             }
 
-            // ----- Translate using Google Translate API -----
             async function translateWord(text, sourceLang, targetLang) {
                 try {
                     const target = LANG_CODES[targetLang] || targetLang;
@@ -999,7 +1116,6 @@
                 }
             }
 
-            // ----- Main translation function -----
             async function handleTranslate() {
                 const text = inputEl.value.trim();
                 if (!text) {
@@ -1055,30 +1171,104 @@
                 }
             }
 
-            // ----- Pagination Controls -----
+            // ============================================================
+            //  Pagination Controls
+            // ============================================================
             function goToPage(page) {
                 const totalPages = getTotalPages();
                 if (page < 1 || page > totalPages) return;
                 currentPage = page;
                 renderHistory();
-                // Scroll to top of table
                 document.querySelector('.table-wrapper').scrollTop = 0;
             }
 
             function nextPage() {
                 const totalPages = getTotalPages();
-                if (currentPage < totalPages) {
-                    goToPage(currentPage + 1);
-                }
+                if (currentPage < totalPages) goToPage(currentPage + 1);
             }
 
             function prevPage() {
-                if (currentPage > 1) {
-                    goToPage(currentPage - 1);
+                if (currentPage > 1) goToPage(currentPage - 1);
+            }
+
+            // ============================================================
+            //  History Management Functions
+            // ============================================================
+            function clearHistory() {
+                if (history.length === 0) return;
+                if (confirm('Delete all search history?')) {
+                    history = [];
+                    currentPage = 1;
+                    saveHistory();
+                    renderHistory();
+                    statusMsg.textContent = '🗑️ All entries deleted.';
                 }
             }
 
-            // ----- Event listeners using EVENT DELEGATION -----
+            function exportCSV() {
+                if (history.length === 0) {
+                    alert('No history to export.');
+                    return;
+                }
+
+                let csv = 'Word,Normalized,English,German (with article),French (with article),Chinese,Count\n';
+                history.forEach(entry => {
+                    const deWithArticle = entry.translations.de ? 
+                        `${getArticle('de', entry.translations.de) || ''} ${entry.translations.de}`.trim() : '';
+                    const frWithArticle = entry.translations.fr ? 
+                        `${getArticle('fr', entry.translations.fr) || ''} ${entry.translations.fr}`.trim() : '';
+                    
+                    const row = [
+                        `"${entry.word}"`,
+                        `"${entry.normalized || ''}"`,
+                        `"${entry.translations.en || ''}"`,
+                        `"${deWithArticle}"`,
+                        `"${frWithArticle}"`,
+                        `"${entry.translations.zh || ''}"`,
+                        entry.count || 1
+                    ];
+                    csv += row.join(',') + '\n';
+                });
+
+                const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = `polyglot_history_${new Date().toISOString().slice(0,10)}.csv`;
+                link.click();
+                URL.revokeObjectURL(link.href);
+                statusMsg.textContent = '📤 CSV exported!';
+            }
+
+            async function syncNow() {
+                if (!USE_CLOUD || JSONBIN_BIN_ID === 'YOUR_BIN_ID') {
+                    statusMsg.textContent = '⚠️ Cloud sync is not configured.';
+                    return;
+                }
+                
+                statusMsg.textContent = '☁️ Syncing...';
+                await syncToCloud(history);
+                
+                const cloudData = await syncFromCloud();
+                if (cloudData && Array.isArray(cloudData) && cloudData.length > 0) {
+                    if (cloudData.length > history.length) {
+                        history = cloudData;
+                        saveHistory();
+                        renderHistory();
+                        statusMsg.textContent = '☁️ Synced from cloud (newer data)';
+                    } else if (history.length > cloudData.length) {
+                        await syncToCloud(history);
+                        statusMsg.textContent = '☁️ Synced to cloud (local has more)';
+                    } else {
+                        statusMsg.textContent = '☁️ Already in sync ✓';
+                    }
+                } else {
+                    statusMsg.textContent = '☁️ Synced to cloud';
+                }
+            }
+
+            // ============================================================
+            //  Event Listeners
+            // ============================================================
             translateBtn.addEventListener('click', handleTranslate);
 
             inputEl.addEventListener('keydown', (e) => {
@@ -1089,13 +1279,13 @@
             });
 
             document.getElementById('clearHistoryBtn').addEventListener('click', clearHistory);
-            document.getElementById('exportHistoryBtn').addEventListener('click', exportHistory);
+            document.getElementById('exportHistoryBtn').addEventListener('click', exportCSV);
+            document.getElementById('syncNowBtn').addEventListener('click', syncNow);
 
-            // Pagination buttons
             prevPageBtn.addEventListener('click', prevPage);
             nextPageBtn.addEventListener('click', nextPage);
 
-            // ----- EVENT DELEGATION for delete buttons (NO CONFIRMATION) -----
+            // Event delegation for delete buttons
             historyBody.addEventListener('click', function(e) {
                 const target = e.target.closest('.delete-btn');
                 if (target) {
@@ -1106,27 +1296,24 @@
                 }
             });
 
-            // ----- Keyboard shortcuts for pagination -----
+            // Keyboard shortcuts
             document.addEventListener('keydown', function(e) {
-                // Left arrow = previous page, Right arrow = next page
                 if (e.target.tagName === 'INPUT') return;
-                if (e.key === 'ArrowLeft') {
-                    e.preventDefault();
-                    prevPage();
-                } else if (e.key === 'ArrowRight') {
-                    e.preventDefault();
-                    nextPage();
-                }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); prevPage(); }
+                else if (e.key === 'ArrowRight') { e.preventDefault(); nextPage(); }
             });
 
-            // ----- Initial state -----
+            // ============================================================
+            //  Initialization
+            // ============================================================
             detectedLang.textContent = '🔍 Source: auto-detect';
             statusMsg.textContent = 'Type any word and press Translate ✨';
             loadHistory();
 
-            console.log('🤖 AI Polyglot ready! Translates ANY word with German/French articles');
+            console.log('🤖 AI Polyglot ready with cloud sync!');
+            console.log('📡 Bin ID: 6a7847d4da38895dfec9134');
             console.log('📜 History shows 10 entries per page');
-            console.log('🗑️ Click the ✕ button to delete individual entries (no confirmation)');
+            console.log('🗑️ Click ✕ to delete entries (no confirmation)');
             console.log('⌨️ Use ← and → arrow keys to navigate pages');
         })();
     </script>
