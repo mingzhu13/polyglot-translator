@@ -1,5 +1,18 @@
 [
   {
+    "word": "cortisol",
+    "normalized": "cortisol",
+    "detectedLang": "en",
+    "translations": {
+      "en": "cortisol",
+      "de": "Cortisol",
+      "fr": "cortisol",
+      "zh": "皮质醇"
+    },
+    "count": 1,
+    "timestamp": 1786572925083
+  },
+  {
     "word": "œstrogène",
     "normalized": "œstrogène",
     "detectedLang": "en",
