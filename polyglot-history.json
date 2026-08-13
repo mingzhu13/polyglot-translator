@@ -1,5 +1,18 @@
 [
   {
+    "word": "Sternschnuppe",
+    "normalized": "sternschnuppe",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Shooting star",
+      "de": "Sternschnuppe",
+      "fr": "Étoile filante",
+      "zh": "流星"
+    },
+    "count": 1,
+    "timestamp": 1786650458004
+  },
+  {
     "word": "fernrohr",
     "normalized": "fernrohr",
     "detectedLang": "en",
