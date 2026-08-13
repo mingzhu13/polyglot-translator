@@ -1,5 +1,18 @@
 [
   {
+    "word": "der Kastenstern",
+    "normalized": "kastenstern",
+    "detectedLang": "de",
+    "translations": {
+      "en": "the box star",
+      "de": "der Kastenstern",
+      "fr": "l'étoile de la boîte",
+      "zh": "盒子之星"
+    },
+    "count": 1,
+    "timestamp": 1786650967210
+  },
+  {
     "word": "Kastensterne",
     "normalized": "kastensterne",
     "detectedLang": "en",
