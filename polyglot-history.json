@@ -1,5 +1,18 @@
 [
   {
+    "word": "龟背竹",
+    "normalized": "龟背竹",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Monstera deliciosa",
+      "de": "Monstera deliciosa",
+      "fr": "Monstera délicieuse",
+      "zh": "龟背竹"
+    },
+    "count": 1,
+    "timestamp": 1786292479104
+  },
+  {
     "word": "Da darüben",
     "normalized": "da darüben",
     "detectedLang": "en",
