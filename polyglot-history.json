@@ -1,5 +1,18 @@
 [
   {
+    "word": "Sternzeichen",
+    "normalized": "sternzeichen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Zodiac sign",
+      "de": "Sternzeichen",
+      "fr": "Signe du zodiaque",
+      "zh": "十二生肖"
+    },
+    "count": 1,
+    "timestamp": 1786650657127
+  },
+  {
     "word": "Sternschnuppe",
     "normalized": "sternschnuppe",
     "detectedLang": "en",
