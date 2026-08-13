@@ -1,5 +1,18 @@
 [
   {
+    "word": "hin und wieder",
+    "normalized": "hin und wieder",
+    "detectedLang": "en",
+    "translations": {
+      "en": "now and again",
+      "de": "hin und wieder",
+      "fr": "de temps en temps",
+      "zh": "时不时地"
+    },
+    "count": 1,
+    "timestamp": 1786650183982
+  },
+  {
     "word": "Raumstation",
     "normalized": "raumstation",
     "detectedLang": "en",
