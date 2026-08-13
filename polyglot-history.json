@@ -1,5 +1,18 @@
 [
   {
+    "word": "Raumstation",
+    "normalized": "raumstation",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Space station",
+      "de": "Raumstation",
+      "fr": "Station spatiale",
+      "zh": "空间站"
+    },
+    "count": 1,
+    "timestamp": 1786650082170
+  },
+  {
     "word": "vorbeiflegen",
     "normalized": "vorbeiflegen",
     "detectedLang": "en",
