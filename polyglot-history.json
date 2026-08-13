@@ -1,5 +1,18 @@
 [
   {
+    "word": "vorbeiflegen",
+    "normalized": "vorbeiflegen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "fly past",
+      "de": "vorbeiflegen",
+      "fr": "défilé aérien",
+      "zh": "飞过去"
+    },
+    "count": 1,
+    "timestamp": 1786649981207
+  },
+  {
     "word": "Minderheit",
     "normalized": "minderheit",
     "detectedLang": "en",
