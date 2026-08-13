@@ -1,5 +1,18 @@
 [
   {
+    "word": "Arktis",
+    "normalized": "arktis",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Arktis",
+      "de": "Arktis",
+      "fr": "Arktis",
+      "zh": "北极"
+    },
+    "count": 1,
+    "timestamp": 1786649811386
+  },
+  {
     "word": "äquator",
     "normalized": "äquator",
     "detectedLang": "en",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1786649723950
-  },
-  {
-    "word": "äquotor",
-    "normalized": "äquotor",
-    "detectedLang": "en",
-    "translations": {
-      "en": "äquotor",
-      "de": "äquotor",
-      "fr": "äquotor",
-      "zh": "阿科特"
-    },
-    "count": 1,
-    "timestamp": 1786649710217
   },
   {
     "word": "shadow",
