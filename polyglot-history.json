@@ -1,5 +1,18 @@
 [
   {
+    "word": "delamination",
+    "normalized": "delamination",
+    "detectedLang": "en",
+    "translations": {
+      "en": "delamination",
+      "de": "Delaminierung",
+      "fr": "délaminage",
+      "zh": "分层"
+    },
+    "count": 1,
+    "timestamp": 1786625677573
+  },
+  {
     "word": "fleet history",
     "normalized": "fleet history",
     "detectedLang": "en",
