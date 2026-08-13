@@ -1,5 +1,18 @@
 [
   {
+    "word": "Südhalbkugel",
+    "normalized": "südhalbkugel",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Southern Hemisphere",
+      "de": "Südhalbkugel",
+      "fr": "Hémisphère Sud",
+      "zh": "南半球"
+    },
+    "count": 1,
+    "timestamp": 1786650855301
+  },
+  {
     "word": "Kreuz des Südens",
     "normalized": "kreuz des südens",
     "detectedLang": "en",
