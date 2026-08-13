@@ -1,16 +1,16 @@
 [
   {
-    "word": "Umlaufbahnfernrohr",
-    "normalized": "umlaufbahnfernrohr",
+    "word": "fernrohr",
+    "normalized": "fernrohr",
     "detectedLang": "en",
     "translations": {
-      "en": "Orbital telescope",
-      "de": "Umlaufbahnfernrohr",
-      "fr": "Télescope orbital",
-      "zh": "轨道望远镜"
+      "en": "telescope",
+      "de": "fernrohr",
+      "fr": "télescope",
+      "zh": "望远镜"
     },
     "count": 1,
-    "timestamp": 1786650354058
+    "timestamp": 1786650363192
   },
   {
     "word": "Umlaufbahn",
