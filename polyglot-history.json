@@ -1,5 +1,18 @@
 [
   {
+    "word": "äquotor",
+    "normalized": "äquotor",
+    "detectedLang": "en",
+    "translations": {
+      "en": "äquotor",
+      "de": "äquotor",
+      "fr": "äquotor",
+      "zh": "阿科特"
+    },
+    "count": 1,
+    "timestamp": 1786649710217
+  },
+  {
     "word": "shadow",
     "normalized": "shadow",
     "detectedLang": "en",
