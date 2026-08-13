@@ -1,5 +1,18 @@
 [
   {
+    "word": "Nordstern",
+    "normalized": "nordstern",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Nordstern",
+      "de": "Nordstern",
+      "fr": "Nordstern",
+      "zh": "诺德斯特恩"
+    },
+    "count": 1,
+    "timestamp": 1786650875750
+  },
+  {
     "word": "Südhalbkugel",
     "normalized": "südhalbkugel",
     "detectedLang": "en",
