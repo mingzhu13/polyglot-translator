@@ -1,5 +1,18 @@
 [
   {
+    "word": "äquator",
+    "normalized": "äquator",
+    "detectedLang": "en",
+    "translations": {
+      "en": "equator",
+      "de": "äquator",
+      "fr": "équateur",
+      "zh": "赤道"
+    },
+    "count": 1,
+    "timestamp": 1786649723950
+  },
+  {
     "word": "äquotor",
     "normalized": "äquotor",
     "detectedLang": "en",
