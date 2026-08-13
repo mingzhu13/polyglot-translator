@@ -1,5 +1,18 @@
 [
   {
+    "word": "Kreuz des Südens",
+    "normalized": "kreuz des südens",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Southern Cross",
+      "de": "Kreuz des Südens",
+      "fr": "Croix du Sud",
+      "zh": "南十字星"
+    },
+    "count": 1,
+    "timestamp": 1786650833616
+  },
+  {
     "word": "星座",
     "normalized": "星座",
     "detectedLang": "en",
