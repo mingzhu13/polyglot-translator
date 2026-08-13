@@ -1,5 +1,18 @@
 [
   {
+    "word": "binder",
+    "normalized": "binder",
+    "detectedLang": "en",
+    "translations": {
+      "en": "binder",
+      "de": "Bindemittel",
+      "fr": "liant",
+      "zh": "活页夹"
+    },
+    "count": 1,
+    "timestamp": 1786654333045
+  },
+  {
     "word": "通讯录",
     "normalized": "通讯录",
     "detectedLang": "en",
