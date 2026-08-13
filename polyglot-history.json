@@ -1,5 +1,18 @@
 [
   {
+    "word": "shadow",
+    "normalized": "shadow",
+    "detectedLang": "en",
+    "translations": {
+      "en": "shadow",
+      "de": "Schatten",
+      "fr": "ombre",
+      "zh": "阴影"
+    },
+    "count": 1,
+    "timestamp": 1786649594995
+  },
+  {
     "word": "aushalten",
     "normalized": "aushalten",
     "detectedLang": "en",
