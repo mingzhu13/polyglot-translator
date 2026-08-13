@@ -1,5 +1,18 @@
 [
   {
+    "word": "星座",
+    "normalized": "星座",
+    "detectedLang": "en",
+    "translations": {
+      "en": "constellation",
+      "de": "Konstellation",
+      "fr": "constellation",
+      "zh": "星座"
+    },
+    "count": 1,
+    "timestamp": 1786650695322
+  },
+  {
     "word": "Sternzeichen",
     "normalized": "sternzeichen",
     "detectedLang": "en",
