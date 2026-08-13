@@ -1,5 +1,18 @@
 [
   {
+    "word": "Umlaufbahn",
+    "normalized": "umlaufbahn",
+    "detectedLang": "en",
+    "translations": {
+      "en": "orbit",
+      "de": "Umlaufbahn",
+      "fr": "orbite",
+      "zh": "轨道"
+    },
+    "count": 1,
+    "timestamp": 1786650242428
+  },
+  {
     "word": "ab und zu",
     "normalized": "ab und zu",
     "detectedLang": "en",
