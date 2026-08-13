@@ -1,16 +1,16 @@
 [
   {
-    "word": "Mup",
-    "normalized": "mup",
+    "word": "esoteric",
+    "normalized": "esoteric",
     "detectedLang": "en",
     "translations": {
-      "en": "Mup",
-      "de": "Mup",
-      "fr": "Tasse",
-      "zh": "穆普"
+      "en": "esoteric",
+      "de": "esoterisch",
+      "fr": "ésotérique",
+      "zh": "深奥的"
     },
     "count": 1,
-    "timestamp": 1786654433194
+    "timestamp": 1786654575385
   },
   {
     "word": "binder",
