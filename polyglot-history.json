@@ -1,5 +1,18 @@
 [
   {
+    "word": "通讯录",
+    "normalized": "通讯录",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Address book",
+      "de": "Adressbuch",
+      "fr": "Carnet d'adresses",
+      "zh": "通讯录"
+    },
+    "count": 1,
+    "timestamp": 1786651402504
+  },
+  {
     "word": "Polarstern",
     "normalized": "polarstern",
     "detectedLang": "en",
