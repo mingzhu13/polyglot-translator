@@ -1,5 +1,18 @@
 [
   {
+    "word": "Minderheit",
+    "normalized": "minderheit",
+    "detectedLang": "en",
+    "translations": {
+      "en": "minority",
+      "de": "Minderheit",
+      "fr": "minorité",
+      "zh": "少数民族"
+    },
+    "count": 1,
+    "timestamp": 1786649954896
+  },
+  {
     "word": "Arktis",
     "normalized": "arktis",
     "detectedLang": "en",
