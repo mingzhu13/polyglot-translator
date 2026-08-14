@@ -1,5 +1,18 @@
 [
   {
+    "word": "Knockoff",
+    "normalized": "knockoff",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Knockoff",
+      "de": "Nachahmung",
+      "fr": "Contrefaçon",
+      "zh": "仿冒品"
+    },
+    "count": 1,
+    "timestamp": 1786746633026
+  },
+  {
     "word": "esoteric",
     "normalized": "esoteric",
     "detectedLang": "en",
