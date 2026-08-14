@@ -1,18 +1,5 @@
 [
   {
-    "word": "anscheinend",
-    "normalized": "anscheinend",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Apparently",
-      "de": "Anscheinend",
-      "fr": "Apparemment",
-      "zh": "显然"
-    },
-    "count": 2,
-    "timestamp": 1786716746214
-  },
-  {
     "word": "esoteric",
     "normalized": "esoteric",
     "detectedLang": "en",
@@ -388,6 +375,19 @@
     },
     "count": 2,
     "timestamp": 1786282967021
+  },
+  {
+    "word": "anscheinend",
+    "normalized": "anscheinend",
+    "detectedLang": "en",
+    "translations": {
+      "en": "apparently",
+      "de": "anscheinend",
+      "fr": "apparemment",
+      "zh": "显然"
+    },
+    "count": 1,
+    "timestamp": 1786282943537
   },
   {
     "word": "Beckmesserei",
