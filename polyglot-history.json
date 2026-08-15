@@ -1,5 +1,18 @@
 [
   {
+    "word": "revile",
+    "normalized": "revile",
+    "detectedLang": "en",
+    "translations": {
+      "en": "revile",
+      "de": "schmähen",
+      "fr": "vilipender",
+      "zh": "唾骂"
+    },
+    "count": 1,
+    "timestamp": 1786791184001
+  },
+  {
     "word": "Knockoff",
     "normalized": "knockoff",
     "detectedLang": "en",
