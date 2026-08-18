@@ -1,5 +1,18 @@
 [
   {
+    "word": "Schmuck",
+    "normalized": "schmuck",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Jewelry",
+      "de": "Schmuck",
+      "fr": "Bijoux",
+      "zh": "珠宝"
+    },
+    "count": 1,
+    "timestamp": 1787078136557
+  },
+  {
     "word": "Höhle",
     "normalized": "höhle",
     "detectedLang": "en",
