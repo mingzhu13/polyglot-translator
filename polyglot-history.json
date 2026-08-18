@@ -1,5 +1,18 @@
 [
   {
+    "word": "说得过去的",
+    "normalized": "说得过去的",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Justifiable",
+      "de": "Gerechtfertigt",
+      "fr": "Justifiable",
+      "zh": "说得过去的"
+    },
+    "count": 1,
+    "timestamp": 1787076608093
+  },
+  {
     "word": "Plausible",
     "normalized": "plausible",
     "detectedLang": "en",
