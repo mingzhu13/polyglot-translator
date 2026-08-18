@@ -1,5 +1,18 @@
 [
   {
+    "word": "Stegreif",
+    "normalized": "stegreif",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Stegreif",
+      "de": "Stegreif",
+      "fr": "Stegreif",
+      "zh": "施特格赖夫"
+    },
+    "count": 1,
+    "timestamp": 1787079643835
+  },
+  {
     "word": "Steigreif",
     "normalized": "steigreif",
     "detectedLang": "en",
