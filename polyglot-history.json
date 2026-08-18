@@ -1,5 +1,18 @@
 [
   {
+    "word": "Höhle",
+    "normalized": "höhle",
+    "detectedLang": "en",
+    "translations": {
+      "en": "cave",
+      "de": "Höhle",
+      "fr": "grotte",
+      "zh": "洞穴"
+    },
+    "count": 1,
+    "timestamp": 1787077895944
+  },
+  {
     "word": "berghütte",
     "normalized": "berghütte",
     "detectedLang": "en",
