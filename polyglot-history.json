@@ -1,5 +1,18 @@
 [
   {
+    "word": "Steigreifrede",
+    "normalized": "steigreifrede",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Stirrup speech",
+      "de": "Steigreifrede",
+      "fr": "Discours à l'étrier",
+      "zh": "马镫演讲"
+    },
+    "count": 1,
+    "timestamp": 1787079568824
+  },
+  {
     "word": "Einschätzung",
     "normalized": "einschätzung",
     "detectedLang": "en",
