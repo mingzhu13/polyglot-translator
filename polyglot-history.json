@@ -1,5 +1,18 @@
 [
   {
+    "word": "Einschätzung",
+    "normalized": "einschätzung",
+    "detectedLang": "en",
+    "translations": {
+      "en": "assessment",
+      "de": "Einschätzung",
+      "fr": "évaluation",
+      "zh": "评估"
+    },
+    "count": 1,
+    "timestamp": 1787079194293
+  },
+  {
     "word": "insgesamt",
     "normalized": "insgesamt",
     "detectedLang": "en",
