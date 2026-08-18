@@ -1,5 +1,18 @@
 [
   {
+    "word": "berghütte",
+    "normalized": "berghütte",
+    "detectedLang": "en",
+    "translations": {
+      "en": "mountain hut",
+      "de": "berghütte",
+      "fr": "refuge de montagne",
+      "zh": "山间小屋"
+    },
+    "count": 1,
+    "timestamp": 1787077652423
+  },
+  {
     "word": "abgelegend",
     "normalized": "abgelegend",
     "detectedLang": "en",
