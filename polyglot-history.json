@@ -1,5 +1,18 @@
 [
   {
+    "word": "insgesamt",
+    "normalized": "insgesamt",
+    "detectedLang": "en",
+    "translations": {
+      "en": "in total",
+      "de": "insgesamt",
+      "fr": "en tout",
+      "zh": "总共"
+    },
+    "count": 1,
+    "timestamp": 1787078440119
+  },
+  {
     "word": "Begleiter",
     "normalized": "begleiter",
     "detectedLang": "en",
