@@ -1,5 +1,18 @@
 [
   {
+    "word": "refuser",
+    "normalized": "refuser",
+    "detectedLang": "en",
+    "translations": {
+      "en": "refuse",
+      "de": "verweigern",
+      "fr": "refuser",
+      "zh": "拒绝"
+    },
+    "count": 1,
+    "timestamp": 1787077179861
+  },
+  {
     "word": "plausible",
     "normalized": "plausible",
     "detectedLang": "en",
