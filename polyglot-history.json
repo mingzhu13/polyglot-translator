@@ -1,5 +1,18 @@
 [
   {
+    "word": "pasthèque",
+    "normalized": "pasthèque",
+    "detectedLang": "en",
+    "translations": {
+      "en": "watermelon",
+      "de": "Wassermelone",
+      "fr": "pasthèque",
+      "zh": "西瓜"
+    },
+    "count": 1,
+    "timestamp": 1787077340122
+  },
+  {
     "word": "refuser",
     "normalized": "refuser",
     "detectedLang": "en",
