@@ -1,5 +1,18 @@
 [
   {
+    "word": "Stegreifrede",
+    "normalized": "stegreifrede",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Stegreifrede",
+      "de": "Stegreifrede",
+      "fr": "Stegreifrède",
+      "zh": "施泰格莱弗莱德"
+    },
+    "count": 1,
+    "timestamp": 1787079651559
+  },
+  {
     "word": "Stegreif",
     "normalized": "stegreif",
     "detectedLang": "en",
