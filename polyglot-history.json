@@ -1,5 +1,18 @@
 [
   {
+    "word": "尚合情的",
+    "normalized": "尚合情的",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Reasonable",
+      "de": "Vernünftig",
+      "fr": "Raisonnable",
+      "zh": "尚合情的"
+    },
+    "count": 1,
+    "timestamp": 1787076630558
+  },
+  {
     "word": "说得过去的",
     "normalized": "说得过去的",
     "detectedLang": "en",
