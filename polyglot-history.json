@@ -1,5 +1,18 @@
 [
   {
+    "word": "Begleiter",
+    "normalized": "begleiter",
+    "detectedLang": "en",
+    "translations": {
+      "en": "companion",
+      "de": "Begleiter",
+      "fr": "compagnon",
+      "zh": "伴侣"
+    },
+    "count": 1,
+    "timestamp": 1787078212528
+  },
+  {
     "word": "Schmuck",
     "normalized": "schmuck",
     "detectedLang": "en",
