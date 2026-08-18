@@ -1,5 +1,18 @@
 [
   {
+    "word": "abgelegend",
+    "normalized": "abgelegend",
+    "detectedLang": "en",
+    "translations": {
+      "en": "remote",
+      "de": "abgelegend",
+      "fr": "télécommande",
+      "zh": "偏僻的"
+    },
+    "count": 1,
+    "timestamp": 1787077635075
+  },
+  {
     "word": "Hängematte",
     "normalized": "hängematte",
     "detectedLang": "en",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1787077471645
-  },
-  {
-    "word": "Hängematt",
-    "normalized": "hängematt",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Hängematt",
-      "de": "Hängematt",
-      "fr": "Hängematt",
-      "zh": "汉格马特"
-    },
-    "count": 1,
-    "timestamp": 1787077466397
   },
   {
     "word": "pasthèque",
