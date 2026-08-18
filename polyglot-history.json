@@ -1,5 +1,18 @@
 [
   {
+    "word": "Plausible",
+    "normalized": "plausible",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Plausible",
+      "de": "Plausibel",
+      "fr": "Plausible",
+      "zh": "似是而非的"
+    },
+    "count": 1,
+    "timestamp": 1787045645765
+  },
+  {
     "word": "revile",
     "normalized": "revile",
     "detectedLang": "en",
