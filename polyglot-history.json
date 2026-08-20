@@ -1,5 +1,18 @@
 [
   {
+    "word": "Dolmetscher",
+    "normalized": "dolmetscher",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Interpreter",
+      "de": "Dolmetscher",
+      "fr": "Interprète",
+      "zh": "口译员"
+    },
+    "count": 1,
+    "timestamp": 1787251875641
+  },
+  {
     "word": "Umland",
     "normalized": "umland",
     "detectedLang": "en",
