@@ -1,5 +1,18 @@
 [
   {
+    "word": "glandouiller",
+    "normalized": "glandouiller",
+    "detectedLang": "en",
+    "translations": {
+      "en": "glandouiller",
+      "de": "Glandouiller",
+      "fr": "glandouiller",
+      "zh": "格兰杜耶"
+    },
+    "count": 1,
+    "timestamp": 1787253427163
+  },
+  {
     "word": "Pauschale",
     "normalized": "pauschale",
     "detectedLang": "en",
