@@ -1,5 +1,18 @@
 [
   {
+    "word": "Pfund",
+    "normalized": "pfund",
+    "detectedLang": "en",
+    "translations": {
+      "en": "pound",
+      "de": "Pfund",
+      "fr": "livre",
+      "zh": "磅"
+    },
+    "count": 1,
+    "timestamp": 1787251287722
+  },
+  {
     "word": "ernst",
     "normalized": "ernst",
     "detectedLang": "en",
