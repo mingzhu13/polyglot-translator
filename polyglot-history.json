@@ -1,5 +1,18 @@
 [
   {
+    "word": "einfache Strecke",
+    "normalized": "einfache strecke",
+    "detectedLang": "en",
+    "translations": {
+      "en": "easy route",
+      "de": "einfache Strecke",
+      "fr": "itinéraire facile",
+      "zh": "简单的路线"
+    },
+    "count": 1,
+    "timestamp": 1787252805162
+  },
+  {
     "word": "hésiter",
     "normalized": "hésiter",
     "detectedLang": "en",
