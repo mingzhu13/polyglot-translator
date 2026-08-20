@@ -1,5 +1,18 @@
 [
   {
+    "word": "fauché",
+    "normalized": "fauché",
+    "detectedLang": "en",
+    "translations": {
+      "en": "broke",
+      "de": "pleite",
+      "fr": "fauché",
+      "zh": "坏了"
+    },
+    "count": 1,
+    "timestamp": 1787260701316
+  },
+  {
     "word": "glandouiller",
     "normalized": "glandouiller",
     "detectedLang": "en",
