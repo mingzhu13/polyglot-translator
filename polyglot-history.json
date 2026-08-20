@@ -1,5 +1,18 @@
 [
   {
+    "word": "entweder oder",
+    "normalized": "entweder oder",
+    "detectedLang": "en",
+    "translations": {
+      "en": "either ... or",
+      "de": "entweder oder",
+      "fr": "soit... soit",
+      "zh": "要么...要么"
+    },
+    "count": 1,
+    "timestamp": 1787252512544
+  },
+  {
     "word": "vor Ort",
     "normalized": "vor ort",
     "detectedLang": "en",
