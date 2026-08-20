@@ -1,5 +1,18 @@
 [
   {
+    "word": "Erstattet",
+    "normalized": "erstattet",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Erstattet",
+      "de": "Erstattet",
+      "fr": "Erstatt",
+      "zh": "埃斯塔泰特"
+    },
+    "count": 1,
+    "timestamp": 1787252365103
+  },
+  {
     "word": "Vollsitzung",
     "normalized": "vollsitzung",
     "detectedLang": "en",
