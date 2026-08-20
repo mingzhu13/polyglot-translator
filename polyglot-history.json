@@ -1,5 +1,18 @@
 [
   {
+    "word": "anstrengend",
+    "normalized": "anstrengend",
+    "detectedLang": "en",
+    "translations": {
+      "en": "stressful",
+      "de": "anstrengend",
+      "fr": "stressant",
+      "zh": "有压力的"
+    },
+    "count": 1,
+    "timestamp": 1787252559157
+  },
+  {
     "word": "entweder oder",
     "normalized": "entweder oder",
     "detectedLang": "en",
