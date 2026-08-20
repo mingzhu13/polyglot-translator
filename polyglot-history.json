@@ -1,5 +1,18 @@
 [
   {
+    "word": "Rhur",
+    "normalized": "rhur",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Rhur",
+      "de": "Ruhr",
+      "fr": "Rhur",
+      "zh": "鲁尔"
+    },
+    "count": 1,
+    "timestamp": 1787251781263
+  },
+  {
     "word": "unschlagbar",
     "normalized": "unschlagbar",
     "detectedLang": "en",
