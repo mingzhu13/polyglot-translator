@@ -1,5 +1,18 @@
 [
   {
+    "word": "pendeln",
+    "normalized": "pendeln",
+    "detectedLang": "en",
+    "translations": {
+      "en": "commute",
+      "de": "pendeln",
+      "fr": "navette",
+      "zh": "通勤"
+    },
+    "count": 1,
+    "timestamp": 1787252971033
+  },
+  {
     "word": "einfache Strecke",
     "normalized": "einfache strecke",
     "detectedLang": "en",
