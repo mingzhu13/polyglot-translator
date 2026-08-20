@@ -1,5 +1,18 @@
 [
   {
+    "word": "Hinfahrt",
+    "normalized": "hinfahrt",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Outward journey",
+      "de": "Hinfahrt",
+      "fr": "Voyage aller",
+      "zh": "外出旅行"
+    },
+    "count": 1,
+    "timestamp": 1787252617824
+  },
+  {
     "word": "anstrengend",
     "normalized": "anstrengend",
     "detectedLang": "en",
