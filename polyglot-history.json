@@ -1,5 +1,18 @@
 [
   {
+    "word": "hésiter",
+    "normalized": "hésiter",
+    "detectedLang": "en",
+    "translations": {
+      "en": "hesitate",
+      "de": "zögern",
+      "fr": "hésiter",
+      "zh": "犹豫"
+    },
+    "count": 1,
+    "timestamp": 1787252631737
+  },
+  {
     "word": "Hinfahrt",
     "normalized": "hinfahrt",
     "detectedLang": "en",
