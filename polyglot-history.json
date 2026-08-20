@@ -1,5 +1,18 @@
 [
   {
+    "word": "ernst",
+    "normalized": "ernst",
+    "detectedLang": "en",
+    "translations": {
+      "en": "ernst",
+      "de": "ernst",
+      "fr": "Ernest",
+      "zh": "恩斯特"
+    },
+    "count": 1,
+    "timestamp": 1787251153627
+  },
+  {
     "word": "übliche",
     "normalized": "übliche",
     "detectedLang": "en",
