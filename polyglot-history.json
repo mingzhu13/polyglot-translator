@@ -1,5 +1,18 @@
 [
   {
+    "word": "Pauschale",
+    "normalized": "pauschale",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Flat rate",
+      "de": "Pauschale",
+      "fr": "Forfait",
+      "zh": "扁平率"
+    },
+    "count": 1,
+    "timestamp": 1787253109110
+  },
+  {
     "word": "pendeln",
     "normalized": "pendeln",
     "detectedLang": "en",
