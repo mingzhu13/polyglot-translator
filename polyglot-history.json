@@ -1,5 +1,18 @@
 [
   {
+    "word": "übliche",
+    "normalized": "übliche",
+    "detectedLang": "en",
+    "translations": {
+      "en": "usual",
+      "de": "übliche",
+      "fr": "habituel",
+      "zh": "通常"
+    },
+    "count": 1,
+    "timestamp": 1787251127544
+  },
+  {
     "word": "Stegreifrede",
     "normalized": "stegreifrede",
     "detectedLang": "en",
