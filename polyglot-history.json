@@ -1,5 +1,18 @@
 [
   {
+    "word": "Vollsitzung",
+    "normalized": "vollsitzung",
+    "detectedLang": "en",
+    "translations": {
+      "en": "full session",
+      "de": "Vollsitzung",
+      "fr": "séance complète",
+      "zh": "完整的会议"
+    },
+    "count": 1,
+    "timestamp": 1787251890722
+  },
+  {
     "word": "Dolmetscher",
     "normalized": "dolmetscher",
     "detectedLang": "en",
