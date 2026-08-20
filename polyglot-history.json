@@ -1,5 +1,18 @@
 [
   {
+    "word": "vor Ort",
+    "normalized": "vor ort",
+    "detectedLang": "en",
+    "translations": {
+      "en": "on site",
+      "de": "vor Ort",
+      "fr": "sur place",
+      "zh": "现场"
+    },
+    "count": 1,
+    "timestamp": 1787252466513
+  },
+  {
     "word": "Erstattet",
     "normalized": "erstattet",
     "detectedLang": "en",
