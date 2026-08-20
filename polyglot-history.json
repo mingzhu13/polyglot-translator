@@ -1,5 +1,18 @@
 [
   {
+    "word": "Umland",
+    "normalized": "umland",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Surrounding area",
+      "de": "Umland",
+      "fr": "Environs",
+      "zh": "周边地区"
+    },
+    "count": 1,
+    "timestamp": 1787251834777
+  },
+  {
     "word": "Rhur",
     "normalized": "rhur",
     "detectedLang": "en",
