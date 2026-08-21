@@ -372,6 +372,25 @@
             transform: scale(1.1);
         }
 
+        .comment-input {
+            width: 100%;
+            min-width: 150px;
+            padding: 0.45rem 0.55rem;
+            border: 1px solid #c8dae6;
+            border-radius: 7px;
+            background: #fff;
+            color: #1a3a48;
+            font: inherit;
+            font-size: 0.8rem;
+            resize: vertical;
+        }
+
+        .comment-input:focus {
+            outline: none;
+            border-color: #2a7f9e;
+            box-shadow: 0 0 0 3px rgba(42, 127, 158, 0.12);
+        }
+
         .empty-history {
             text-align: center;
             padding: 2.5rem 1rem;
@@ -653,13 +672,14 @@
                                 <th>German <span class="article-hint">(der/die/das)</span></th>
                                 <th>French <span class="article-hint">(le/la/les)</span></th>
                                 <th>Chinese</th>
+                                <th style="min-width:180px;">Comment</th>
                                 <th style="text-align:center;width:60px;">Count</th>
                                 <th style="text-align:center;width:50px;">✕</th>
                             </tr>
                         </thead>
                         <tbody id="historyBody">
                             <tr>
-                                <td colspan="8" class="empty-history">No translations yet. Start typing above! ✨</td>
+                                <td colspan="9" class="empty-history">No translations yet. Start typing above! ✨</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1121,6 +1141,25 @@
                 statusMsg.textContent = '🗑️ Entry deleted.';
             }
 
+            function updateEntryComment(index, comment) {
+                if (index < 0 || index >= history.length) return;
+                history[index].comment = comment;
+                saveHistory();
+
+                if (GITHUB_TOKEN && GITHUB_USERNAME !== 'YOUR_GITHUB_USERNAME') {
+                    syncToGitHub(history);
+                }
+            }
+
+            function escapeHtml(value) {
+                return String(value)
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#039;');
+            }
+
             function addToHistory(word, translations) {
                 if (!word || !translations) return;
                 
@@ -1211,7 +1250,7 @@
                 if (history.length === 0) {
                     historyBody.innerHTML = `
                         <tr>
-                            <td colspan="8" class="empty-history">No translations yet. Start typing above! ✨</td>
+                            <td colspan="9" class="empty-history">No translations yet. Start typing above! ✨</td>
                         </tr>
                     `;
                     historyCount.textContent = '(0 entries)';
@@ -1250,6 +1289,9 @@
                             <td>${deWithArticle}</td>
                             <td>${frWithArticle}</td>
                             <td>${entry.translations.zh || '—'}</td>
+                            <td>
+                                <textarea class="comment-input" data-index="${globalIndex}" rows="2" placeholder="Add a comment...">${escapeHtml(entry.comment || '')}</textarea>
+                            </td>
                             <td style="text-align:center;">
                                 ${isDuplicate ? `<span class="count-badge">${entry.count}</span>` : '1'}
                             </td>
@@ -1415,7 +1457,7 @@
                     return;
                 }
 
-                let csv = 'Word,Normalized,English,German (with article),French (with article),Chinese,Count\n';
+                let csv = 'Word,Normalized,English,German (with article),French (with article),Chinese,Comment,Count\n';
                 history.forEach(entry => {
                     const deWithArticle = entry.translations.de ? 
                         `${getArticle('de', entry.translations.de) || ''} ${entry.translations.de}`.trim() : '';
@@ -1429,6 +1471,7 @@
                         `"${deWithArticle}"`,
                         `"${frWithArticle}"`,
                         `"${entry.translations.zh || ''}"`,
+                        `"${(entry.comment || '').replace(/"/g, '""')}"`,
                         entry.count || 1
                     ];
                     csv += row.join(',') + '\n';
@@ -1516,6 +1559,17 @@
                     if (!isNaN(index)) {
                         deleteEntry(index);
                     }
+                }
+            });
+
+            historyBody.addEventListener('change', function(e) {
+                const target = e.target.closest('.comment-input');
+                if (!target) return;
+
+                const index = parseInt(target.getAttribute('data-index'));
+                if (!isNaN(index)) {
+                    updateEntryComment(index, target.value);
+                    statusMsg.textContent = '💬 Comment saved.';
                 }
             });
 
