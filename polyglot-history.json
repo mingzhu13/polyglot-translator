@@ -1,17 +1,16 @@
 [
   {
-    "word": "Biniou",
-    "normalized": "biniou",
+    "word": "musique celtique, cornemuse et biniou",
+    "normalized": "musique celtique, cornemuse et biniou",
     "detectedLang": "en",
     "translations": {
-      "en": "Biniou",
+      "en": "musique celtique, cornemuse et biniou",
       "de": "❌ Translation failed",
       "fr": "❌ Translation failed",
       "zh": "❌ Translation failed"
     },
     "count": 1,
-    "timestamp": 1787431629798,
-    "comment": "布列塔尼fengdi"
+    "timestamp": 1787431694360
   },
   {
     "word": "delamination",
