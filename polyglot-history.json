@@ -1,5 +1,18 @@
 [
   {
+    "word": "Biniou",
+    "normalized": "biniou",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Biniou",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787431629798
+  },
+  {
     "word": "delamination",
     "normalized": "delamination",
     "detectedLang": "en",
@@ -78,7 +91,7 @@
     },
     "count": 1,
     "timestamp": 1787252805162,
-    "comment": "单程 通勤\n"
+    "comment": "单程\n"
   },
   {
     "word": "hésiter",
