@@ -1,5 +1,18 @@
 [
   {
+    "word": "Peach",
+    "normalized": "peach",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Peach",
+      "de": "Pfirsich",
+      "fr": "Pêche",
+      "zh": "桃"
+    },
+    "count": 1,
+    "timestamp": 1787600224473
+  },
+  {
     "word": "musique celtique, cornemuse et biniou",
     "normalized": "musique celtique, cornemuse et biniou",
     "detectedLang": "en",
