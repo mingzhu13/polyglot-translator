@@ -1,5 +1,18 @@
 [
   {
+    "word": "Mettre au rebut",
+    "normalized": "mettre au rebut",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "Discard",
+      "de": "Verwerfen",
+      "fr": "Mettre au rebut",
+      "zh": "丢弃"
+    },
+    "count": 1,
+    "timestamp": 1787660915145
+  },
+  {
     "word": "Peach",
     "normalized": "peach",
     "detectedLang": "en",
