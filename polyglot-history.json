@@ -1,5 +1,18 @@
 [
   {
+    "word": "grèce",
+    "normalized": "grèce",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "Greece",
+      "de": "❌ Translation failed",
+      "fr": "grèce",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857305795
+  },
+  {
     "word": "polysoloxane",
     "normalized": "polysoloxane",
     "detectedLang": "en",
