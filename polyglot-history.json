@@ -1,5 +1,18 @@
 [
   {
+    "word": "Verdienste",
+    "normalized": "verdienste",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Verdienste",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857854488
+  },
+  {
     "word": "Geschäft",
     "normalized": "geschäft",
     "detectedLang": "en",
