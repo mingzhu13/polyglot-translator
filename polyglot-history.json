@@ -1,5 +1,18 @@
 [
   {
+    "word": "abnehmen",
+    "normalized": "abnehmen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "abnehmen",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857465738
+  },
+  {
     "word": "grèque",
     "normalized": "grèque",
     "detectedLang": "en",
