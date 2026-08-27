@@ -1,5 +1,18 @@
 [
   {
+    "word": "menschlich",
+    "normalized": "menschlich",
+    "detectedLang": "en",
+    "translations": {
+      "en": "menschlich",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787860035884
+  },
+  {
     "word": "gemüt",
     "normalized": "gemüt",
     "detectedLang": "en",
