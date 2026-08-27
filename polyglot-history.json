@@ -1,5 +1,18 @@
 [
   {
+    "word": "Wirksamkeit",
+    "normalized": "wirksamkeit",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Wirksamkeit",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787858089859
+  },
+  {
     "word": "Nebenwirkung",
     "normalized": "nebenwirkung",
     "detectedLang": "en",
