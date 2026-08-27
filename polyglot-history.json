@@ -1,5 +1,18 @@
 [
   {
+    "word": "truncate",
+    "normalized": "truncate",
+    "detectedLang": "en",
+    "translations": {
+      "en": "truncate",
+      "de": "kürzen",
+      "fr": "tronquer",
+      "zh": "截短"
+    },
+    "count": 1,
+    "timestamp": 1787835057241
+  },
+  {
     "word": "Mettre au rebut",
     "normalized": "mettre au rebut",
     "detectedLang": "fr",
