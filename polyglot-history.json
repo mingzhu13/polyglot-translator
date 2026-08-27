@@ -4,13 +4,13 @@
     "normalized": "grèce",
     "detectedLang": "fr",
     "translations": {
-      "en": "Grèce",
+      "en": "grèce",
       "de": "❌ Translation failed",
       "fr": "❌ Translation failed",
       "zh": "❌ Translation failed"
     },
-    "count": 2,
-    "timestamp": 1787857323229
+    "count": 3,
+    "timestamp": 1787857335961
   },
   {
     "word": "polysoloxane",
