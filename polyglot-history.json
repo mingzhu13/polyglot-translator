@@ -1,5 +1,18 @@
 [
   {
+    "word": "Im Voraus",
+    "normalized": "im voraus",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Im Voraus",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787859507115
+  },
+  {
     "word": "beeilen",
     "normalized": "beeilen",
     "detectedLang": "en",
