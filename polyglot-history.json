@@ -1,5 +1,18 @@
 [
   {
+    "word": "Impfung",
+    "normalized": "impfung",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Impfung",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787858486502
+  },
+  {
     "word": "Rückfall",
     "normalized": "rückfall",
     "detectedLang": "en",
