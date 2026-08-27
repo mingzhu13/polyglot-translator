@@ -1,5 +1,18 @@
 [
   {
+    "word": "idiom",
+    "normalized": "idiom",
+    "detectedLang": "en",
+    "translations": {
+      "en": "idiom",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787859373289
+  },
+  {
     "word": "slang",
     "normalized": "slang",
     "detectedLang": "en",
