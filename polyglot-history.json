@@ -1,6 +1,6 @@
 [
   {
-    "word": "greece",
+    "word": "Greece",
     "normalized": "greece",
     "detectedLang": "en",
     "translations": {
@@ -9,34 +9,8 @@
       "fr": "❌ Translation failed",
       "zh": "❌ Translation failed"
     },
-    "count": 2,
-    "timestamp": 1787857383813
-  },
-  {
-    "word": "crète",
-    "normalized": "crète",
-    "detectedLang": "en",
-    "translations": {
-      "en": "crète",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
     "count": 1,
-    "timestamp": 1787857348079
-  },
-  {
-    "word": "grèce",
-    "normalized": "grèce",
-    "detectedLang": "fr",
-    "translations": {
-      "en": "grèce",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 3,
-    "timestamp": 1787857335961
+    "timestamp": 1787857392578
   },
   {
     "word": "polysoloxane",
