@@ -1,5 +1,18 @@
 [
   {
+    "word": "Behandlung",
+    "normalized": "behandlung",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Behandlung",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857928725
+  },
+  {
     "word": "Onkologie",
     "normalized": "onkologie",
     "detectedLang": "en",
