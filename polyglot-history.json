@@ -1,5 +1,18 @@
 [
   {
+    "word": "crète",
+    "normalized": "crète",
+    "detectedLang": "en",
+    "translations": {
+      "en": "crète",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857348079
+  },
+  {
     "word": "grèce",
     "normalized": "grèce",
     "detectedLang": "fr",
