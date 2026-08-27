@@ -1,5 +1,18 @@
 [
   {
+    "word": "pince",
+    "normalized": "pince",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "pliers",
+      "de": "Zange",
+      "fr": "pince",
+      "zh": "钳"
+    },
+    "count": 1,
+    "timestamp": 1787839109534
+  },
+  {
     "word": "truncate",
     "normalized": "truncate",
     "detectedLang": "en",
