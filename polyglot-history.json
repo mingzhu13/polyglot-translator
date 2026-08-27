@@ -1,5 +1,18 @@
 [
   {
+    "word": "Tonerre",
+    "normalized": "tonerre",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Tonerre",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787858755673
+  },
+  {
     "word": "Wette",
     "normalized": "wette",
     "detectedLang": "en",
