@@ -1,5 +1,18 @@
 [
   {
+    "word": "aushalten",
+    "normalized": "aushalten",
+    "detectedLang": "en",
+    "translations": {
+      "en": "aushalten",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 2,
+    "timestamp": 1787859694272
+  },
+  {
     "word": "Im Voraus",
     "normalized": "im voraus",
     "detectedLang": "en",
@@ -1121,19 +1134,6 @@
     },
     "count": 1,
     "timestamp": 1786649594995
-  },
-  {
-    "word": "aushalten",
-    "normalized": "aushalten",
-    "detectedLang": "en",
-    "translations": {
-      "en": "endure",
-      "de": "aushalten",
-      "fr": "endurer",
-      "zh": "忍受"
-    },
-    "count": 1,
-    "timestamp": 1786649181858
   },
   {
     "word": "龟背竹",
