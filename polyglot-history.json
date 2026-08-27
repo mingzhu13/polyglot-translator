@@ -1,5 +1,18 @@
 [
   {
+    "word": "Aktien",
+    "normalized": "aktien",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Aktien",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857668390
+  },
+  {
     "word": "abnehmen",
     "normalized": "abnehmen",
     "detectedLang": "en",
