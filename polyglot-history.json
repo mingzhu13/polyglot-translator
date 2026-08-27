@@ -1,5 +1,18 @@
 [
   {
+    "word": "Geschäft",
+    "normalized": "geschäft",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Geschäft",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787857716488
+  },
+  {
     "word": "Aktien",
     "normalized": "aktien",
     "detectedLang": "en",
