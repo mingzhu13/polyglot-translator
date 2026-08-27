@@ -1,5 +1,18 @@
 [
   {
+    "word": "Placebo",
+    "normalized": "placebo",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Placebo",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787858137153
+  },
+  {
     "word": "sensationel",
     "normalized": "sensationel",
     "detectedLang": "en",
