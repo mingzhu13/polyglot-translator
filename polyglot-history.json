@@ -1,5 +1,18 @@
 [
   {
+    "word": "Redensart",
+    "normalized": "redensart",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Redensart",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787859295231
+  },
+  {
     "word": "Fluch",
     "normalized": "fluch",
     "detectedLang": "en",
