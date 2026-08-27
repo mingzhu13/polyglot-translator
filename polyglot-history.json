@@ -1,5 +1,18 @@
 [
   {
+    "word": "Wette",
+    "normalized": "wette",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Wette",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 1,
+    "timestamp": 1787858543599
+  },
+  {
     "word": "Impfung",
     "normalized": "impfung",
     "detectedLang": "en",
