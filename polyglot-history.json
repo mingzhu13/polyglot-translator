@@ -1,5 +1,18 @@
 [
   {
+    "word": "polysoloxane",
+    "normalized": "polysoloxane",
+    "detectedLang": "en",
+    "translations": {
+      "en": "polysoloxane",
+      "de": "Polysoloxan",
+      "fr": "polysoloxane",
+      "zh": "聚硅氧烷"
+    },
+    "count": 1,
+    "timestamp": 1787843313196
+  },
+  {
     "word": "pince",
     "normalized": "pince",
     "detectedLang": "fr",
