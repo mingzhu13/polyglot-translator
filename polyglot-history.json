@@ -1,5 +1,18 @@
 [
   {
+    "word": "idiom",
+    "normalized": "idiom",
+    "detectedLang": "en",
+    "translations": {
+      "en": "idiom",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 2,
+    "timestamp": 1787943468665
+  },
+  {
     "word": "beeilen",
     "normalized": "beeilen",
     "detectedLang": "en",
@@ -63,19 +76,6 @@
     },
     "count": 2,
     "timestamp": 1787943272931
-  },
-  {
-    "word": "idiom",
-    "normalized": "idiom",
-    "detectedLang": "en",
-    "translations": {
-      "en": "idiom",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 1,
-    "timestamp": 1787859373289
   },
   {
     "word": "slang",
