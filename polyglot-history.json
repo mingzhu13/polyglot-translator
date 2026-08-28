@@ -1,5 +1,18 @@
 [
   {
+    "word": "aushalten",
+    "normalized": "aushalten",
+    "detectedLang": "en",
+    "translations": {
+      "en": "endure",
+      "de": "aushalten",
+      "fr": "endurer",
+      "zh": "忍受"
+    },
+    "count": 3,
+    "timestamp": 1787943283295
+  },
+  {
     "word": "gemüt",
     "normalized": "gemüt",
     "detectedLang": "en",
@@ -24,19 +37,6 @@
     },
     "count": 1,
     "timestamp": 1787860035884
-  },
-  {
-    "word": "aushalten",
-    "normalized": "aushalten",
-    "detectedLang": "en",
-    "translations": {
-      "en": "aushalten",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 2,
-    "timestamp": 1787859694272
   },
   {
     "word": "Im Voraus",
