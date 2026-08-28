@@ -1,5 +1,18 @@
 [
   {
+    "word": "beeilen",
+    "normalized": "beeilen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "beeilen",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 2,
+    "timestamp": 1787943454236
+  },
+  {
     "word": "Im Voraus",
     "normalized": "im voraus",
     "detectedLang": "en",
@@ -50,19 +63,6 @@
     },
     "count": 2,
     "timestamp": 1787943272931
-  },
-  {
-    "word": "beeilen",
-    "normalized": "beeilen",
-    "detectedLang": "en",
-    "translations": {
-      "en": "beeilen",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 1,
-    "timestamp": 1787859484268
   },
   {
     "word": "idiom",
