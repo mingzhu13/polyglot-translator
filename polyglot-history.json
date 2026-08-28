@@ -1,5 +1,18 @@
 [
   {
+    "word": "menschlich",
+    "normalized": "menschlich",
+    "detectedLang": "en",
+    "translations": {
+      "en": "human",
+      "de": "menschlich",
+      "fr": "humain",
+      "zh": "人类"
+    },
+    "count": 2,
+    "timestamp": 1787943297038
+  },
+  {
     "word": "aushalten",
     "normalized": "aushalten",
     "detectedLang": "en",
@@ -24,19 +37,6 @@
     },
     "count": 2,
     "timestamp": 1787943272931
-  },
-  {
-    "word": "menschlich",
-    "normalized": "menschlich",
-    "detectedLang": "en",
-    "translations": {
-      "en": "menschlich",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 1,
-    "timestamp": 1787860035884
   },
   {
     "word": "Im Voraus",
