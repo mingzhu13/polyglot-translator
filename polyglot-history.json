@@ -4,13 +4,13 @@
     "normalized": "vorhaben",
     "detectedLang": "de",
     "translations": {
-      "en": "Plan",
-      "de": "Vorhaben",
-      "fr": "Plan",
-      "zh": "计划"
+      "en": "the project",
+      "de": "das Vorhaben",
+      "fr": "le projet",
+      "zh": "该项目"
     },
-    "count": 1,
-    "timestamp": 1788286059162
+    "count": 2,
+    "timestamp": 1788286141185
   },
   {
     "word": "zurück zu den Moderatorin",
