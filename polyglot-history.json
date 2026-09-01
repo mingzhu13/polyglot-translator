@@ -1,5 +1,18 @@
 [
   {
+    "word": "eingezogen",
+    "normalized": "eingezogen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "withdrawn",
+      "de": "eingezogen",
+      "fr": "retiré",
+      "zh": "退缩的"
+    },
+    "count": 1,
+    "timestamp": 1788287300011
+  },
+  {
     "word": "einziegen",
     "normalized": "einziegen",
     "detectedLang": "de",
