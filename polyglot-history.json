@@ -1,5 +1,18 @@
 [
   {
+    "word": "s'amuser",
+    "normalized": "s'amuser",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "have fun",
+      "de": "viel Spaß",
+      "fr": "s'amuser",
+      "zh": "玩得开心"
+    },
+    "count": 1,
+    "timestamp": 1788286460932
+  },
+  {
     "word": "Dolmetscher",
     "normalized": "dolmetscher",
     "detectedLang": "en",
