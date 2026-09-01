@@ -1,5 +1,18 @@
 [
   {
+    "word": "la manière",
+    "normalized": "manière",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "the way",
+      "de": "der Weg",
+      "fr": "la manière",
+      "zh": "道路"
+    },
+    "count": 1,
+    "timestamp": 1788285691893
+  },
+  {
     "word": "la façon",
     "normalized": "façon",
     "detectedLang": "fr",
