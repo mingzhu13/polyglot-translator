@@ -1,5 +1,18 @@
 [
   {
+    "word": "Dolmetscher",
+    "normalized": "dolmetscher",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Interpreter",
+      "de": "Dolmetscher",
+      "fr": "Interprète",
+      "zh": "口译员"
+    },
+    "count": 2,
+    "timestamp": 1788286422341
+  },
+  {
     "word": "Vorhaben",
     "normalized": "vorhaben",
     "detectedLang": "de",
@@ -679,19 +692,6 @@
     },
     "count": 1,
     "timestamp": 1787251890722
-  },
-  {
-    "word": "Dolmetscher",
-    "normalized": "dolmetscher",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Interpreter",
-      "de": "Dolmetscher",
-      "fr": "Interprète",
-      "zh": "口译员"
-    },
-    "count": 1,
-    "timestamp": 1787251875641
   },
   {
     "word": "Umland",
