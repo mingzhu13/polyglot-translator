@@ -1,5 +1,18 @@
 [
   {
+    "word": "hervorragend",
+    "normalized": "hervorragend",
+    "detectedLang": "de",
+    "translations": {
+      "en": "terrific",
+      "de": "hervorragend",
+      "fr": "formidable",
+      "zh": "了不起"
+    },
+    "count": 1,
+    "timestamp": 1788289242217
+  },
+  {
     "word": "betrifft",
     "normalized": "betrifft",
     "detectedLang": "de",
