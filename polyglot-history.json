@@ -1,16 +1,16 @@
 [
   {
-    "word": "s'amuser",
-    "normalized": "s'amuser",
-    "detectedLang": "fr",
+    "word": "Verfügung",
+    "normalized": "verfügung",
+    "detectedLang": "de",
     "translations": {
-      "en": "have fun",
-      "de": "viel Spaß",
-      "fr": "s'amuser",
-      "zh": "玩得开心"
+      "en": "Disposal",
+      "de": "Verfügung",
+      "fr": "Élimination",
+      "zh": "处理"
     },
     "count": 1,
-    "timestamp": 1788286460932
+    "timestamp": 1788286541148
   },
   {
     "word": "Dolmetscher",
