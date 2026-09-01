@@ -1,5 +1,18 @@
 [
   {
+    "word": "Verfügung",
+    "normalized": "verfügung",
+    "detectedLang": "de",
+    "translations": {
+      "en": "La verfügung",
+      "de": "La verfügung",
+      "fr": "La vérification",
+      "zh": "解释权"
+    },
+    "count": 2,
+    "timestamp": 1788286594950
+  },
+  {
     "word": "eintreten",
     "normalized": "eintreten",
     "detectedLang": "de",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1788286555970
-  },
-  {
-    "word": "Verfügung",
-    "normalized": "verfügung",
-    "detectedLang": "de",
-    "translations": {
-      "en": "Disposal",
-      "de": "Verfügung",
-      "fr": "Élimination",
-      "zh": "处理"
-    },
-    "count": 1,
-    "timestamp": 1788286541148
   },
   {
     "word": "Dolmetscher",
