@@ -1,5 +1,18 @@
 [
   {
+    "word": "zerstören",
+    "normalized": "zerstören",
+    "detectedLang": "de",
+    "translations": {
+      "en": "destroy",
+      "de": "zerstören",
+      "fr": "détruire",
+      "zh": "破坏"
+    },
+    "count": 1,
+    "timestamp": 1788286811419
+  },
+  {
     "word": "zerstôren",
     "normalized": "zerstôren",
     "detectedLang": "en",
