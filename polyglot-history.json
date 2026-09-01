@@ -1,5 +1,18 @@
 [
   {
+    "word": "feststellen",
+    "normalized": "feststellen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "notice",
+      "de": "feststellen",
+      "fr": "avis",
+      "zh": "注意"
+    },
+    "count": 2,
+    "timestamp": 1788289260832
+  },
+  {
     "word": "hervorragend",
     "normalized": "hervorragend",
     "detectedLang": "de",
@@ -50,19 +63,6 @@
     },
     "count": 1,
     "timestamp": 1788287443887
-  },
-  {
-    "word": "feststellen",
-    "normalized": "feststellen",
-    "detectedLang": "de",
-    "translations": {
-      "en": "notice",
-      "de": "feststellen",
-      "fr": "avis",
-      "zh": "注意"
-    },
-    "count": 1,
-    "timestamp": 1788287213319
   },
   {
     "word": "das Dorf",
