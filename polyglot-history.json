@@ -1,5 +1,18 @@
 [
   {
+    "word": "zu Ihrer Verfügung",
+    "normalized": "zu ihrer verfügung",
+    "detectedLang": "de",
+    "translations": {
+      "en": "at your disposal",
+      "de": "zu Ihrer Verfügung",
+      "fr": "à votre disposition",
+      "zh": "任你处置"
+    },
+    "count": 1,
+    "timestamp": 1788286642560
+  },
+  {
     "word": "Verfügung",
     "normalized": "verfügung",
     "detectedLang": "de",
