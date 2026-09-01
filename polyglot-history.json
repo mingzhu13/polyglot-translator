@@ -1,29 +1,16 @@
 [
   {
-    "word": "la manière",
-    "normalized": "manière",
-    "detectedLang": "fr",
+    "word": "zurück zu den Moderatorin",
+    "normalized": "zurück zu den moderatorin",
+    "detectedLang": "de",
     "translations": {
-      "en": "the way",
-      "de": "der Weg",
-      "fr": "la manière",
-      "zh": "道路"
+      "en": "back to the moderator",
+      "de": "zurück zu den Moderatorin",
+      "fr": "retour au modérateur",
+      "zh": "返回主持人"
     },
     "count": 1,
-    "timestamp": 1788285691893
-  },
-  {
-    "word": "la façon",
-    "normalized": "façon",
-    "detectedLang": "fr",
-    "translations": {
-      "en": "the way",
-      "de": "der Weg",
-      "fr": "la façon",
-      "zh": "道路"
-    },
-    "count": 1,
-    "timestamp": 1788285680844
+    "timestamp": 1788285852654
   },
   {
     "word": "la citation",
