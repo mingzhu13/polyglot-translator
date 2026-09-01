@@ -1,5 +1,18 @@
 [
   {
+    "word": "beeilen",
+    "normalized": "beeilen",
+    "detectedLang": "en",
+    "translations": {
+      "en": "hurry up",
+      "de": "beeilen",
+      "fr": "dépêche-toi",
+      "zh": "赶快"
+    },
+    "count": 3,
+    "timestamp": 1788284045060
+  },
+  {
     "word": "idiom",
     "normalized": "idiom",
     "detectedLang": "en",
@@ -11,19 +24,6 @@
     },
     "count": 4,
     "timestamp": 1788284028043
-  },
-  {
-    "word": "beeilen",
-    "normalized": "beeilen",
-    "detectedLang": "en",
-    "translations": {
-      "en": "beeilen",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 2,
-    "timestamp": 1787943454236
   },
   {
     "word": "Im Voraus",
