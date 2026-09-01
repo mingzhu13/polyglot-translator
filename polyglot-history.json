@@ -1,5 +1,18 @@
 [
   {
+    "word": "einbeziehen",
+    "normalized": "einbeziehen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "include",
+      "de": "einbeziehen",
+      "fr": "inclure",
+      "zh": "包括"
+    },
+    "count": 1,
+    "timestamp": 1788287443887
+  },
+  {
     "word": "eingezogen",
     "normalized": "eingezogen",
     "detectedLang": "de",
