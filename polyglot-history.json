@@ -1,5 +1,18 @@
 [
   {
+    "word": "einziegen",
+    "normalized": "einziegen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "move in",
+      "de": "einziegen",
+      "fr": "emménager",
+      "zh": "搬进来"
+    },
+    "count": 1,
+    "timestamp": 1788287286694
+  },
+  {
     "word": "feststellen",
     "normalized": "feststellen",
     "detectedLang": "de",
