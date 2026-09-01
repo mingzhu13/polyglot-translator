@@ -1,5 +1,18 @@
 [
   {
+    "word": "la citation",
+    "normalized": "citation",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "the quote",
+      "de": "das Zitat",
+      "fr": "la citation",
+      "zh": "报价"
+    },
+    "count": 1,
+    "timestamp": 1788285660415
+  },
+  {
     "word": "zitat",
     "normalized": "zitat",
     "detectedLang": "de",
