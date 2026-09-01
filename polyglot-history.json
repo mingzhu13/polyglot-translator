@@ -1,5 +1,18 @@
 [
   {
+    "word": "nicht geschimpft ist genug gelobt",
+    "normalized": "nicht geschimpft ist genug gelobt",
+    "detectedLang": "de",
+    "translations": {
+      "en": "not being scolded is praised enough",
+      "de": "nicht geschimpft ist genug gelobt",
+      "fr": "ne pas être grondé est assez loué",
+      "zh": "不被骂就被夸够了"
+    },
+    "count": 1,
+    "timestamp": 1788284776255
+  },
+  {
     "word": "vorknüpfen",
     "normalized": "vorknüpfen",
     "detectedLang": "de",
