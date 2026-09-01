@@ -1,5 +1,18 @@
 [
   {
+    "word": "Vorhaben",
+    "normalized": "vorhaben",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Plan",
+      "de": "Vorhaben",
+      "fr": "Plan",
+      "zh": "计划"
+    },
+    "count": 1,
+    "timestamp": 1788286059162
+  },
+  {
     "word": "zurück zu den Moderatorin",
     "normalized": "zurück zu den moderatorin",
     "detectedLang": "de",
