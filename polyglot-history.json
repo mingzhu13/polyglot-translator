@@ -5,12 +5,12 @@
     "detectedLang": "en",
     "translations": {
       "en": "idiom",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
+      "de": "Idiom",
+      "fr": "idiome",
+      "zh": "成语"
     },
-    "count": 3,
-    "timestamp": 1787943482742
+    "count": 4,
+    "timestamp": 1788284028043
   },
   {
     "word": "beeilen",
