@@ -1,16 +1,16 @@
 [
   {
-    "word": "genügt",
-    "normalized": "genügt",
+    "word": "betrifft",
+    "normalized": "betrifft",
     "detectedLang": "de",
     "translations": {
-      "en": "is enough",
-      "de": "genügt",
-      "fr": "c'est suffisant",
-      "zh": "就足够了"
+      "en": "regards",
+      "de": "betrifft",
+      "fr": "salutations",
+      "zh": "问候"
     },
     "count": 1,
-    "timestamp": 1788289161641
+    "timestamp": 1788289219836
   },
   {
     "word": "otherwise",
