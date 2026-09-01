@@ -1,5 +1,18 @@
 [
   {
+    "word": "eintreten",
+    "normalized": "eintreten",
+    "detectedLang": "de",
+    "translations": {
+      "en": "enter",
+      "de": "eintreten",
+      "fr": "entrer",
+      "zh": "进入"
+    },
+    "count": 1,
+    "timestamp": 1788286555970
+  },
+  {
     "word": "Verfügung",
     "normalized": "verfügung",
     "detectedLang": "de",
