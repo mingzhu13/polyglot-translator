@@ -1,5 +1,18 @@
 [
   {
+    "word": "zitat",
+    "normalized": "zitat",
+    "detectedLang": "de",
+    "translations": {
+      "en": "quote",
+      "de": "zitat",
+      "fr": "citation",
+      "zh": "引用"
+    },
+    "count": 1,
+    "timestamp": 1788285642488
+  },
+  {
     "word": "Redensart",
     "normalized": "redensart",
     "detectedLang": "en",
