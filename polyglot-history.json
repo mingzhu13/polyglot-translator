@@ -1,5 +1,18 @@
 [
   {
+    "word": "la façon",
+    "normalized": "façon",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "the way",
+      "de": "der Weg",
+      "fr": "la façon",
+      "zh": "道路"
+    },
+    "count": 1,
+    "timestamp": 1788285680844
+  },
+  {
     "word": "la citation",
     "normalized": "citation",
     "detectedLang": "fr",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1788285660415
-  },
-  {
-    "word": "zitat",
-    "normalized": "zitat",
-    "detectedLang": "de",
-    "translations": {
-      "en": "quote",
-      "de": "zitat",
-      "fr": "citation",
-      "zh": "引用"
-    },
-    "count": 1,
-    "timestamp": 1788285642488
   },
   {
     "word": "Redensart",
