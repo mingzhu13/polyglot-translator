@@ -1,5 +1,18 @@
 [
   {
+    "word": "das Dorf",
+    "normalized": "dorf",
+    "detectedLang": "de",
+    "translations": {
+      "en": "the village",
+      "de": "das Dorf",
+      "fr": "le village",
+      "zh": "村庄"
+    },
+    "count": 1,
+    "timestamp": 1788286932850
+  },
+  {
     "word": "zerstören",
     "normalized": "zerstören",
     "detectedLang": "de",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1788286811419
-  },
-  {
-    "word": "zerstôren",
-    "normalized": "zerstôren",
-    "detectedLang": "en",
-    "translations": {
-      "en": "zerstôren",
-      "de": "zerstöre",
-      "fr": "zerstôren",
-      "zh": "泽斯托伦"
-    },
-    "count": 1,
-    "timestamp": 1788286803753
   },
   {
     "word": "zu Ihrer Verfügung",
