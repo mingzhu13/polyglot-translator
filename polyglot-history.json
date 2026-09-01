@@ -1,5 +1,18 @@
 [
   {
+    "word": "leise",
+    "normalized": "leise",
+    "detectedLang": "de",
+    "translations": {
+      "en": "quiet",
+      "de": "leise",
+      "fr": "calme",
+      "zh": "安静的"
+    },
+    "count": 1,
+    "timestamp": 1788284334028
+  },
+  {
     "word": "beeilen",
     "normalized": "beeilen",
     "detectedLang": "en",
