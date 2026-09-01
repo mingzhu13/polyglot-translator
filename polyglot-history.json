@@ -1,5 +1,18 @@
 [
   {
+    "word": "zerstôren",
+    "normalized": "zerstôren",
+    "detectedLang": "en",
+    "translations": {
+      "en": "zerstôren",
+      "de": "zerstöre",
+      "fr": "zerstôren",
+      "zh": "泽斯托伦"
+    },
+    "count": 1,
+    "timestamp": 1788286803753
+  },
+  {
     "word": "zu Ihrer Verfügung",
     "normalized": "zu ihrer verfügung",
     "detectedLang": "de",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1788286642560
-  },
-  {
-    "word": "Verfügung",
-    "normalized": "verfügung",
-    "detectedLang": "de",
-    "translations": {
-      "en": "La Verfügung",
-      "de": "La Verfügung",
-      "fr": "La Verfügung",
-      "zh": "行政诉讼"
-    },
-    "count": 3,
-    "timestamp": 1788286612064
   },
   {
     "word": "eintreten",
