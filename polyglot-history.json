@@ -1,5 +1,18 @@
 [
   {
+    "word": "gullible",
+    "normalized": "gullible",
+    "detectedLang": "en",
+    "translations": {
+      "en": "gullible",
+      "de": "leichtgläubig",
+      "fr": "crédule",
+      "zh": "容易受骗的"
+    },
+    "count": 1,
+    "timestamp": 1788548310674
+  },
+  {
     "word": "quignon",
     "normalized": "quignon",
     "detectedLang": "en",
