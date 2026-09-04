@@ -1,5 +1,18 @@
 [
   {
+    "word": "put out",
+    "normalized": "put out",
+    "detectedLang": "en",
+    "translations": {
+      "en": "put out",
+      "de": "herausgeben",
+      "fr": "éteindre",
+      "zh": "拿出来"
+    },
+    "count": 1,
+    "timestamp": 1788549231013
+  },
+  {
     "word": "gullible",
     "normalized": "gullible",
     "detectedLang": "en",
