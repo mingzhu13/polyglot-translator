@@ -1,5 +1,19 @@
 [
   {
+    "word": "Erbse",
+    "normalized": "erbse",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Erbse",
+      "de": "❌ Translation failed",
+      "fr": "❌ Translation failed",
+      "zh": "❌ Translation failed"
+    },
+    "count": 3,
+    "timestamp": 1788810859033,
+    "comment": "pea"
+  },
+  {
     "word": "put out",
     "normalized": "put out",
     "detectedLang": "en",
