@@ -1,5 +1,18 @@
 [
   {
+    "word": "Zeichen",
+    "normalized": "zeichen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Sign",
+      "de": "Zeichen",
+      "fr": "Signe",
+      "zh": "符号"
+    },
+    "count": 1,
+    "timestamp": 1791310172361
+  },
+  {
     "word": "Außerirdischer",
     "normalized": "außerirdischer",
     "detectedLang": "de",
@@ -11,32 +24,6 @@
     },
     "count": 1,
     "timestamp": 1791310124409
-  },
-  {
-    "word": "ausserirdischer",
-    "normalized": "ausserirdischer",
-    "detectedLang": "en",
-    "translations": {
-      "en": "ausserirdischer",
-      "de": "außerirdischer",
-      "fr": "ausserirdischer",
-      "zh": "奥塞里迪舍尔"
-    },
-    "count": 1,
-    "timestamp": 1791310096386
-  },
-  {
-    "word": "Wo ein Wille ist, ist auch ein Weg",
-    "normalized": "wo ein wille ist, ist auch ein weg",
-    "detectedLang": "de",
-    "translations": {
-      "en": "Where there is a will, there's a way",
-      "de": "Wo ein Wille ist, ist auch ein Weg",
-      "fr": "Là où il y a une volonté, il y a un chemin",
-      "zh": "有志者事竟成"
-    },
-    "count": 1,
-    "timestamp": 1791309467937
   },
   {
     "word": "erhöhung",
