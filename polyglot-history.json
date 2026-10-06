@@ -1,5 +1,18 @@
 [
   {
+    "word": "wirkt",
+    "normalized": "wirkt",
+    "detectedLang": "de",
+    "translations": {
+      "en": "works",
+      "de": "wirkt",
+      "fr": "travaux",
+      "zh": "作品"
+    },
+    "count": 1,
+    "timestamp": 1791309213108
+  },
+  {
     "word": "wirken",
     "normalized": "wirken",
     "detectedLang": "de",
