@@ -1,16 +1,16 @@
 [
   {
-    "word": "wirkt",
-    "normalized": "wirkt",
+    "word": "es wirkt",
+    "normalized": "es wirkt",
     "detectedLang": "de",
     "translations": {
-      "en": "works",
-      "de": "wirkt",
-      "fr": "travaux",
-      "zh": "作品"
+      "en": "it works",
+      "de": "es wirkt",
+      "fr": "Ça marche",
+      "zh": "有用"
     },
     "count": 1,
-    "timestamp": 1791309213108
+    "timestamp": 1791309221513
   },
   {
     "word": "wirken",
