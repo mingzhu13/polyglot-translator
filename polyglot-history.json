@@ -1,5 +1,18 @@
 [
   {
+    "word": "ernst",
+    "normalized": "ernst",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Ernst",
+      "de": "Ernst",
+      "fr": "Ernst",
+      "zh": "恩斯特"
+    },
+    "count": 2,
+    "timestamp": 1791308862980
+  },
+  {
     "word": "das Labor",
     "normalized": "labor",
     "detectedLang": "de",
@@ -1031,19 +1044,6 @@
     },
     "count": 1,
     "timestamp": 1787251287722
-  },
-  {
-    "word": "ernst",
-    "normalized": "ernst",
-    "detectedLang": "en",
-    "translations": {
-      "en": "ernst",
-      "de": "ernst",
-      "fr": "Ernest",
-      "zh": "恩斯特"
-    },
-    "count": 1,
-    "timestamp": 1787251153627
   },
   {
     "word": "übliche",
