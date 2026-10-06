@@ -1,5 +1,18 @@
 [
   {
+    "word": "Mir fällt kein anderes Wort ein",
+    "normalized": "mir fällt kein anderes wort ein",
+    "detectedLang": "de",
+    "translations": {
+      "en": "I can't think of any other word",
+      "de": "Mir fällt kein anderes Wort ein",
+      "fr": "Je ne trouve pas d'autre mot",
+      "zh": "我想不出任何其他词"
+    },
+    "count": 1,
+    "timestamp": 1791309120170
+  },
+  {
     "word": "das Zeichnen",
     "normalized": "zeichnen",
     "detectedLang": "de",
