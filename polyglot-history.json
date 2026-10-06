@@ -1,5 +1,18 @@
 [
   {
+    "word": "Zyste",
+    "normalized": "zyste",
+    "detectedLang": "de",
+    "translations": {
+      "en": "cyst",
+      "de": "Zyste",
+      "fr": "kyste",
+      "zh": "囊肿"
+    },
+    "count": 1,
+    "timestamp": 1791308720368
+  },
+  {
     "word": "Unterleib",
     "normalized": "unterleib",
     "detectedLang": "de",
