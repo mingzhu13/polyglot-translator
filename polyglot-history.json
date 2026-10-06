@@ -1,5 +1,18 @@
 [
   {
+    "word": "Utraschall",
+    "normalized": "utraschall",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Utraschall",
+      "de": "Utraschall",
+      "fr": "Utraschall",
+      "zh": "乌特拉沙尔"
+    },
+    "count": 1,
+    "timestamp": 1791308757585
+  },
+  {
     "word": "Hebamme",
     "normalized": "hebamme",
     "detectedLang": "de",
