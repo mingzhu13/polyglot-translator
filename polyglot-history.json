@@ -1,5 +1,18 @@
 [
   {
+    "word": "hervoragend",
+    "normalized": "hervoragend",
+    "detectedLang": "de",
+    "translations": {
+      "en": "excellent",
+      "de": "hervoragend",
+      "fr": "excellent",
+      "zh": "出色的"
+    },
+    "count": 1,
+    "timestamp": 1791308420713
+  },
+  {
     "word": "Erbse",
     "normalized": "erbse",
     "detectedLang": "en",
