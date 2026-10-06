@@ -1,5 +1,18 @@
 [
   {
+    "word": "Unterleib",
+    "normalized": "unterleib",
+    "detectedLang": "de",
+    "translations": {
+      "en": "abdomen",
+      "de": "Unterleib",
+      "fr": "abdomen",
+      "zh": "腹部"
+    },
+    "count": 1,
+    "timestamp": 1791308709237
+  },
+  {
     "word": "bauch",
     "normalized": "bauch",
     "detectedLang": "de",
