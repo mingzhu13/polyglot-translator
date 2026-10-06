@@ -1,16 +1,16 @@
 [
   {
-    "word": "einfallen",
-    "normalized": "einfallen",
-    "detectedLang": "de",
+    "word": "Antibiotika",
+    "normalized": "antibiotika",
+    "detectedLang": "en",
     "translations": {
-      "en": "come up",
-      "de": "einfallen",
-      "fr": "montez",
-      "zh": "过来"
+      "en": "Antibiotika",
+      "de": "Antibiotika",
+      "fr": "Antibiotique",
+      "zh": "抗生素"
     },
     "count": 1,
-    "timestamp": 1791309132197
+    "timestamp": 1791309195681
   },
   {
     "word": "Mir fällt kein anderes Wort ein",
