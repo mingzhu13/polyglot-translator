@@ -1,5 +1,18 @@
 [
   {
+    "word": "übrig",
+    "normalized": "übrig",
+    "detectedLang": "de",
+    "translations": {
+      "en": "left over",
+      "de": "übrig",
+      "fr": "reste",
+      "zh": "剩下的"
+    },
+    "count": 1,
+    "timestamp": 1791310868943
+  },
+  {
     "word": "aufzeichnen",
     "normalized": "aufzeichnen",
     "detectedLang": "de",
