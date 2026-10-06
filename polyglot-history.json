@@ -1,5 +1,18 @@
 [
   {
+    "word": "schmermittel",
+    "normalized": "schmermittel",
+    "detectedLang": "de",
+    "translations": {
+      "en": "painkillers",
+      "de": "schmermittel",
+      "fr": "analgésiques",
+      "zh": "止痛药"
+    },
+    "count": 1,
+    "timestamp": 1791309249514
+  },
+  {
     "word": "schmerzhaft",
     "normalized": "schmerzhaft",
     "detectedLang": "de",
