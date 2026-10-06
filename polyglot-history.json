@@ -1,16 +1,16 @@
 [
   {
-    "word": "Spätkommer",
-    "normalized": "spätkommer",
-    "detectedLang": "en",
+    "word": "Pfad",
+    "normalized": "pfad",
+    "detectedLang": "de",
     "translations": {
-      "en": "Spätkommer",
-      "de": "Spätkommer",
-      "fr": "Spatkommer",
-      "zh": "斯帕特科默尔"
+      "en": "path",
+      "de": "Pfad",
+      "fr": "chemin",
+      "zh": "小路"
     },
     "count": 1,
-    "timestamp": 1791310190635
+    "timestamp": 1791310351236
   },
   {
     "word": "Zeichen",
