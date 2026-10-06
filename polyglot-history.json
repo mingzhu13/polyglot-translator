@@ -1,5 +1,18 @@
 [
   {
+    "word": "échographie",
+    "normalized": "échographie",
+    "detectedLang": "fr",
+    "translations": {
+      "en": "ultrasound",
+      "de": "Ultraschall",
+      "fr": "échographie",
+      "zh": "超声波"
+    },
+    "count": 1,
+    "timestamp": 1791308789110
+  },
+  {
     "word": "Utrason",
     "normalized": "utrason",
     "detectedLang": "en",
