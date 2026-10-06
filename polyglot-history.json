@@ -1,5 +1,18 @@
 [
   {
+    "word": "per Dekret",
+    "normalized": "per dekret",
+    "detectedLang": "en",
+    "translations": {
+      "en": "per Dekret",
+      "de": "pro Dekret",
+      "fr": "par Dekret",
+      "zh": "佩尔·德克莱特"
+    },
+    "count": 1,
+    "timestamp": 1791309379752
+  },
+  {
     "word": "vögeln",
     "normalized": "vögeln",
     "detectedLang": "de",
