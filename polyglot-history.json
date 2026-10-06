@@ -1,5 +1,18 @@
 [
   {
+    "word": "einfallen",
+    "normalized": "einfallen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "come up",
+      "de": "einfallen",
+      "fr": "montez",
+      "zh": "过来"
+    },
+    "count": 1,
+    "timestamp": 1791309132197
+  },
+  {
     "word": "Mir fällt kein anderes Wort ein",
     "normalized": "mir fällt kein anderes wort ein",
     "detectedLang": "de",
