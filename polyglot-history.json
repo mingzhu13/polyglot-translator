@@ -1,5 +1,18 @@
 [
   {
+    "word": "sonst nicht",
+    "normalized": "sonst nicht",
+    "detectedLang": "de",
+    "translations": {
+      "en": "otherwise not",
+      "de": "sonst nicht",
+      "fr": "sinon pas",
+      "zh": "否则不"
+    },
+    "count": 1,
+    "timestamp": 1791308918880
+  },
+  {
     "word": "der Urin-test",
     "normalized": "urin-test",
     "detectedLang": "de",
