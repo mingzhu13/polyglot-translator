@@ -1,5 +1,18 @@
 [
   {
+    "word": "aufzeichnen",
+    "normalized": "aufzeichnen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "record",
+      "de": "aufzeichnen",
+      "fr": "enregistrer",
+      "zh": "记录"
+    },
+    "count": 1,
+    "timestamp": 1791310430414
+  },
+  {
     "word": "Pfad",
     "normalized": "pfad",
     "detectedLang": "de",
