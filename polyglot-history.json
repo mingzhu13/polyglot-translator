@@ -1,5 +1,18 @@
 [
   {
+    "word": "wirken",
+    "normalized": "wirken",
+    "detectedLang": "de",
+    "translations": {
+      "en": "works",
+      "de": "wirken",
+      "fr": "travaux",
+      "zh": "作品"
+    },
+    "count": 1,
+    "timestamp": 1791309202894
+  },
+  {
     "word": "Antibiotika",
     "normalized": "antibiotika",
     "detectedLang": "en",
