@@ -1,5 +1,18 @@
 [
   {
+    "word": "der Urin-test",
+    "normalized": "urin-test",
+    "detectedLang": "de",
+    "translations": {
+      "en": "the urine test",
+      "de": "der Urin-test",
+      "fr": "le test d'urine",
+      "zh": "尿液检查"
+    },
+    "count": 1,
+    "timestamp": 1791308901045
+  },
+  {
     "word": "ernste",
     "normalized": "ernste",
     "detectedLang": "de",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1791308883563
-  },
-  {
-    "word": "ernst",
-    "normalized": "ernst",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Ernst",
-      "de": "Ernst",
-      "fr": "Ernst",
-      "zh": "恩斯特"
-    },
-    "count": 2,
-    "timestamp": 1791308862980
   },
   {
     "word": "das Labor",
