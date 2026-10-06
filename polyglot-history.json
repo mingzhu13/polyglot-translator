@@ -1,5 +1,18 @@
 [
   {
+    "word": "begrenzt",
+    "normalized": "begrenzt",
+    "detectedLang": "de",
+    "translations": {
+      "en": "limited",
+      "de": "begrenzt",
+      "fr": "limité",
+      "zh": "有限的"
+    },
+    "count": 1,
+    "timestamp": 1791308378763
+  },
+  {
     "word": "verpennt",
     "normalized": "verpennt",
     "detectedLang": "de",
