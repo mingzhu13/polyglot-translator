@@ -1,5 +1,18 @@
 [
   {
+    "word": "Außerirdischer",
+    "normalized": "außerirdischer",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Alien",
+      "de": "Außerirdischer",
+      "fr": "Étranger",
+      "zh": "外星人"
+    },
+    "count": 1,
+    "timestamp": 1791310124409
+  },
+  {
     "word": "ausserirdischer",
     "normalized": "ausserirdischer",
     "detectedLang": "en",
