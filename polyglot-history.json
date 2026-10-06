@@ -1,5 +1,18 @@
 [
   {
+    "word": "du Glückpilz",
+    "normalized": "du glückpilz",
+    "detectedLang": "de",
+    "translations": {
+      "en": "you lucky guy",
+      "de": "du Glückpilz",
+      "fr": "tu es un gars chanceux",
+      "zh": "你这个幸运儿"
+    },
+    "count": 1,
+    "timestamp": 1791309269052
+  },
+  {
     "word": "schmermittel",
     "normalized": "schmermittel",
     "detectedLang": "de",
