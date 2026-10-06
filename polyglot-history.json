@@ -1,5 +1,18 @@
 [
   {
+    "word": "das Zeichnen",
+    "normalized": "zeichnen",
+    "detectedLang": "de",
+    "translations": {
+      "en": "the drawing",
+      "de": "das Zeichnen",
+      "fr": "le dessin",
+      "zh": "绘图"
+    },
+    "count": 1,
+    "timestamp": 1791309096485
+  },
+  {
     "word": "nicht in einem anderen zusammenhang",
     "normalized": "nicht in einem anderen zusammenhang",
     "detectedLang": "de",
