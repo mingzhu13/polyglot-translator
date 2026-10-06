@@ -1,5 +1,18 @@
 [
   {
+    "word": "das Labor",
+    "normalized": "labor",
+    "detectedLang": "de",
+    "translations": {
+      "en": "the laboratory",
+      "de": "das Labor",
+      "fr": "le laboratoire",
+      "zh": "实验室"
+    },
+    "count": 1,
+    "timestamp": 1791308847640
+  },
+  {
     "word": "échographie",
     "normalized": "échographie",
     "detectedLang": "fr",
@@ -11,58 +24,6 @@
     },
     "count": 1,
     "timestamp": 1791308789110
-  },
-  {
-    "word": "Utrason",
-    "normalized": "utrason",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Utrason",
-      "de": "Utrason",
-      "fr": "Utrason",
-      "zh": "乌特拉森"
-    },
-    "count": 1,
-    "timestamp": 1791308780133
-  },
-  {
-    "word": "Utraschal",
-    "normalized": "utraschal",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Utraschal",
-      "de": "Utraschal",
-      "fr": "Utraschal",
-      "zh": "乌特拉沙尔"
-    },
-    "count": 1,
-    "timestamp": 1791308768462
-  },
-  {
-    "word": "Utraschall",
-    "normalized": "utraschall",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Utraschall",
-      "de": "Utraschall",
-      "fr": "Utraschall",
-      "zh": "乌特拉沙尔"
-    },
-    "count": 1,
-    "timestamp": 1791308757585
-  },
-  {
-    "word": "Hebamme",
-    "normalized": "hebamme",
-    "detectedLang": "de",
-    "translations": {
-      "en": "midwife",
-      "de": "Hebamme",
-      "fr": "sage-femme",
-      "zh": "助产士"
-    },
-    "count": 1,
-    "timestamp": 1791308738966
   },
   {
     "word": "Zyste",
