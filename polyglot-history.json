@@ -1,5 +1,18 @@
 [
   {
+    "word": "Utraschal",
+    "normalized": "utraschal",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Utraschal",
+      "de": "Utraschal",
+      "fr": "Utraschal",
+      "zh": "乌特拉沙尔"
+    },
+    "count": 1,
+    "timestamp": 1791308768462
+  },
+  {
     "word": "Utraschall",
     "normalized": "utraschall",
     "detectedLang": "en",
