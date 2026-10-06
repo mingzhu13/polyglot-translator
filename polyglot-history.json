@@ -1,5 +1,18 @@
 [
   {
+    "word": "Wo ein Wille ist, ist auch ein Weg",
+    "normalized": "wo ein wille ist, ist auch ein weg",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Where there is a will, there's a way",
+      "de": "Wo ein Wille ist, ist auch ein Weg",
+      "fr": "Là où il y a une volonté, il y a un chemin",
+      "zh": "有志者事竟成"
+    },
+    "count": 1,
+    "timestamp": 1791309467937
+  },
+  {
     "word": "erhöhung",
     "normalized": "erhöhung",
     "detectedLang": "de",
