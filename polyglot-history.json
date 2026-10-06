@@ -1,5 +1,18 @@
 [
   {
+    "word": "Utrason",
+    "normalized": "utrason",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Utrason",
+      "de": "Utrason",
+      "fr": "Utrason",
+      "zh": "乌特拉森"
+    },
+    "count": 1,
+    "timestamp": 1791308780133
+  },
+  {
     "word": "Utraschal",
     "normalized": "utraschal",
     "detectedLang": "en",
