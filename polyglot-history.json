@@ -1,5 +1,18 @@
 [
   {
+    "word": "vögeln",
+    "normalized": "vögeln",
+    "detectedLang": "de",
+    "translations": {
+      "en": "fuck",
+      "de": "vögeln",
+      "fr": "Putain",
+      "zh": "他妈的"
+    },
+    "count": 1,
+    "timestamp": 1791309353838
+  },
+  {
     "word": "du Pechvogel",
     "normalized": "du pechvogel",
     "detectedLang": "en",
