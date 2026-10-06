@@ -1,5 +1,18 @@
 [
   {
+    "word": "bauch",
+    "normalized": "bauch",
+    "detectedLang": "de",
+    "translations": {
+      "en": "belly",
+      "de": "bauch",
+      "fr": "ventre",
+      "zh": "腹部"
+    },
+    "count": 1,
+    "timestamp": 1791308595794
+  },
+  {
     "word": "aufregend",
     "normalized": "aufregend",
     "detectedLang": "de",
