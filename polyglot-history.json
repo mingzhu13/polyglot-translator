@@ -1,5 +1,18 @@
 [
   {
+    "word": "schmerzhaft",
+    "normalized": "schmerzhaft",
+    "detectedLang": "de",
+    "translations": {
+      "en": "painful",
+      "de": "schmerzhaft",
+      "fr": "douloureux",
+      "zh": "痛苦"
+    },
+    "count": 1,
+    "timestamp": 1791309238842
+  },
+  {
     "word": "es wirkt",
     "normalized": "es wirkt",
     "detectedLang": "de",
@@ -11,19 +24,6 @@
     },
     "count": 1,
     "timestamp": 1791309221513
-  },
-  {
-    "word": "wirken",
-    "normalized": "wirken",
-    "detectedLang": "de",
-    "translations": {
-      "en": "works",
-      "de": "wirken",
-      "fr": "travaux",
-      "zh": "作品"
-    },
-    "count": 1,
-    "timestamp": 1791309202894
   },
   {
     "word": "Antibiotika",
