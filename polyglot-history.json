@@ -1,5 +1,18 @@
 [
   {
+    "word": "Hebamme",
+    "normalized": "hebamme",
+    "detectedLang": "de",
+    "translations": {
+      "en": "midwife",
+      "de": "Hebamme",
+      "fr": "sage-femme",
+      "zh": "助产士"
+    },
+    "count": 1,
+    "timestamp": 1791308738966
+  },
+  {
     "word": "Zyste",
     "normalized": "zyste",
     "detectedLang": "de",
