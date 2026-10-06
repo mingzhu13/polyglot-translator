@@ -1,5 +1,18 @@
 [
   {
+    "word": "du Pechvögel",
+    "normalized": "du pechvögel",
+    "detectedLang": "en",
+    "translations": {
+      "en": "du Pechvögel",
+      "de": "du Pechvögel",
+      "fr": "du Pechvögel",
+      "zh": "杜佩希沃格尔"
+    },
+    "count": 1,
+    "timestamp": 1791309315775
+  },
+  {
     "word": "du Pechvogel",
     "normalized": "du pechvogel",
     "detectedLang": "en",
