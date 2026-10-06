@@ -1,16 +1,16 @@
 [
   {
-    "word": "per Dekret",
-    "normalized": "per dekret",
-    "detectedLang": "en",
+    "word": "vernüftig",
+    "normalized": "vernüftig",
+    "detectedLang": "de",
     "translations": {
-      "en": "Per Dekret",
-      "de": "Per Dekret",
-      "fr": "Par Dekret",
-      "zh": "佩尔·德克莱特"
+      "en": "reasonable",
+      "de": "vernüftig",
+      "fr": "raisonnable",
+      "zh": "合理的"
     },
-    "count": 2,
-    "timestamp": 1791309396308
+    "count": 1,
+    "timestamp": 1791309411905
   },
   {
     "word": "vögeln",
