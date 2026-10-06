@@ -1,5 +1,18 @@
 [
   {
+    "word": "ausserirdischer",
+    "normalized": "ausserirdischer",
+    "detectedLang": "en",
+    "translations": {
+      "en": "ausserirdischer",
+      "de": "außerirdischer",
+      "fr": "ausserirdischer",
+      "zh": "奥塞里迪舍尔"
+    },
+    "count": 1,
+    "timestamp": 1791310096386
+  },
+  {
     "word": "Wo ein Wille ist, ist auch ein Weg",
     "normalized": "wo ein wille ist, ist auch ein weg",
     "detectedLang": "de",
