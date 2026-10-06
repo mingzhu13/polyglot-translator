@@ -1,5 +1,18 @@
 [
   {
+    "word": "Spätkommer",
+    "normalized": "spätkommer",
+    "detectedLang": "en",
+    "translations": {
+      "en": "Spätkommer",
+      "de": "Spätkommer",
+      "fr": "Spatkommer",
+      "zh": "斯帕特科默尔"
+    },
+    "count": 1,
+    "timestamp": 1791310190635
+  },
+  {
     "word": "Zeichen",
     "normalized": "zeichen",
     "detectedLang": "de",
