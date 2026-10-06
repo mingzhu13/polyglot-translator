@@ -1,5 +1,18 @@
 [
   {
+    "word": "nicht in einem anderen zusammenhang",
+    "normalized": "nicht in einem anderen zusammenhang",
+    "detectedLang": "de",
+    "translations": {
+      "en": "not in any other context",
+      "de": "nicht in einem anderen zusammenhang",
+      "fr": "pas dans un autre contexte",
+      "zh": "不在任何其他情况下"
+    },
+    "count": 1,
+    "timestamp": 1791309033238
+  },
+  {
     "word": "sonst nicht",
     "normalized": "sonst nicht",
     "detectedLang": "de",
