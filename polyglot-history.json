@@ -1,5 +1,18 @@
 [
   {
+    "word": "ernste",
+    "normalized": "ernste",
+    "detectedLang": "de",
+    "translations": {
+      "en": "serious",
+      "de": "ernste",
+      "fr": "sérieux",
+      "zh": "严肃的"
+    },
+    "count": 1,
+    "timestamp": 1791308883563
+  },
+  {
     "word": "ernst",
     "normalized": "ernst",
     "detectedLang": "en",
