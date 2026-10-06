@@ -1,5 +1,18 @@
 [
   {
+    "word": "aufregend",
+    "normalized": "aufregend",
+    "detectedLang": "de",
+    "translations": {
+      "en": "exciting",
+      "de": "aufregend",
+      "fr": "passionnant",
+      "zh": "令人兴奋的"
+    },
+    "count": 1,
+    "timestamp": 1791308521048
+  },
+  {
     "word": "hervoragend",
     "normalized": "hervoragend",
     "detectedLang": "de",
