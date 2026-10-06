@@ -1,5 +1,19 @@
 [
   {
+    "word": "Erbse",
+    "normalized": "erbse",
+    "detectedLang": "en",
+    "translations": {
+      "en": "pea",
+      "de": "Erbse",
+      "fr": "pois",
+      "zh": "豌豆"
+    },
+    "count": 2,
+    "timestamp": 1791308390522,
+    "comment": "pea"
+  },
+  {
     "word": "begrenzt",
     "normalized": "begrenzt",
     "detectedLang": "de",
@@ -24,20 +38,6 @@
     },
     "count": 1,
     "timestamp": 1791308287256
-  },
-  {
-    "word": "Erbse",
-    "normalized": "erbse",
-    "detectedLang": "en",
-    "translations": {
-      "en": "Erbse",
-      "de": "❌ Translation failed",
-      "fr": "❌ Translation failed",
-      "zh": "❌ Translation failed"
-    },
-    "count": 1,
-    "timestamp": 1788810979569,
-    "comment": "pea"
   },
   {
     "word": "put out",
