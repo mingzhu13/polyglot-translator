@@ -1,5 +1,18 @@
 [
   {
+    "word": "bist du gleich soweit",
+    "normalized": "bist du gleich soweit",
+    "detectedLang": "de",
+    "translations": {
+      "en": "you're almost ready",
+      "de": "bist du gleich soweit",
+      "fr": "tu es presque prêt",
+      "zh": "你快准备好了"
+    },
+    "count": 1,
+    "timestamp": 1793649737971
+  },
+  {
     "word": "übrig",
     "normalized": "übrig",
     "detectedLang": "de",
