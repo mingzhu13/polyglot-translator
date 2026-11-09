@@ -1,5 +1,18 @@
 [
   {
+    "word": "Notwendig",
+    "normalized": "notwendig",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Necessary",
+      "de": "Notwendig",
+      "fr": "Nécessaire",
+      "zh": "必要的"
+    },
+    "count": 1,
+    "timestamp": 1794254749791
+  },
+  {
     "word": "bist du gleich soweit",
     "normalized": "bist du gleich soweit",
     "detectedLang": "de",
