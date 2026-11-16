@@ -1,5 +1,18 @@
 [
   {
+    "word": "Betäubungsmeter",
+    "normalized": "betäubungsmeter",
+    "detectedLang": "de",
+    "translations": {
+      "en": "Stun meter",
+      "de": "Betäubungsmeter",
+      "fr": "Compteur d'étourdissement",
+      "zh": "眩晕计"
+    },
+    "count": 1,
+    "timestamp": 1794855826885
+  },
+  {
     "word": "bewähren",
     "normalized": "bewähren",
     "detectedLang": "de",
