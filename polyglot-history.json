@@ -1,5 +1,18 @@
 [
   {
+    "word": "bewähren",
+    "normalized": "bewähren",
+    "detectedLang": "de",
+    "translations": {
+      "en": "prove",
+      "de": "bewähren",
+      "fr": "prouver",
+      "zh": "证明"
+    },
+    "count": 1,
+    "timestamp": 1794855813199
+  },
+  {
     "word": "Notwendig",
     "normalized": "notwendig",
     "detectedLang": "de",
