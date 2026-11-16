@@ -1,5 +1,18 @@
 [
   {
+    "word": "gefoltert",
+    "normalized": "gefoltert",
+    "detectedLang": "de",
+    "translations": {
+      "en": "tortured",
+      "de": "gefoltert",
+      "fr": "torturé",
+      "zh": "折磨"
+    },
+    "count": 1,
+    "timestamp": 1794855848866
+  },
+  {
     "word": "Betäubungsmeter",
     "normalized": "betäubungsmeter",
     "detectedLang": "de",
